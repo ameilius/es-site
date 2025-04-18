@@ -11,6 +11,7 @@ export default function AdminPage() {
   const [businesses, setBusinesses] = useState<Business[]>([]);
   const [selectedBusinesses, setSelectedBusinesses] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [editingBusiness, setEditingBusiness] = useState<Business | null>(null);
 
   useEffect(() => {
@@ -108,6 +109,11 @@ export default function AdminPage() {
           {error}
         </div>
       )}
+      {successMessage && (
+        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+          {successMessage}
+        </div>
+      )}
 
       <div className="grid gap-4">
         {businesses.map(business => (
@@ -169,6 +175,8 @@ export default function AdminPage() {
                   b.id === data.id ? data : b
                 ));
                 setEditingBusiness(null);
+                setSuccessMessage('Business updated successfully!');
+                setTimeout(() => setSuccessMessage(null), 3000);
                 // Refresh the businesses list
                 fetchBusinesses();
               } catch (error) {
