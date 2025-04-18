@@ -151,6 +151,7 @@ export default function AdminPage() {
             <h2 className="text-2xl font-bold mb-4">Edit Business</h2>
             <form onSubmit={async (e) => {
               e.preventDefault();
+              setError(null);
               try {
                 const response = await fetch(`/api/businesses/${editingBusiness.id}`, {
                   method: 'PUT',
@@ -158,15 +159,21 @@ export default function AdminPage() {
                   body: JSON.stringify(editingBusiness),
                 });
 
-                if (!response.ok) throw new Error('Failed to update business');
+                const data = await response.json();
 
-                const updatedBusiness = await response.json();
+                if (!response.ok) {
+                  throw new Error(data.error || 'Failed to update business');
+                }
+
                 setBusinesses(businesses.map(b => 
-                  b.id === updatedBusiness.id ? updatedBusiness : b
+                  b.id === data.id ? data : b
                 ));
                 setEditingBusiness(null);
+                // Refresh the businesses list
+                fetchBusinesses();
               } catch (error) {
-                setError('Failed to update business');
+                setError(error instanceof Error ? error.message : 'Failed to update business');
+                console.error('Update error:', error);
               }
             }}>
               <div className="space-y-4">
