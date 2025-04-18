@@ -256,37 +256,37 @@ export const businesses: Business[] = [
   {
     id: '1744933154778',
     name: 'Cosmic Carryout',
-    category: 'restaurant',
+    category: 'restaurants',
     description: 'Late-night takeout spot offering burgers, sandwiches, and comfort food.',
     address: '646 W Main St, Sylva, NC 28779',
     phone: '(828) 586-2345',
     hours: {
-      monday: '11:00 AM - 9:00 PM',
-      tuesday: '11:00 AM - 9:00 PM',
-      wednesday: '11:00 AM - 9:00 PM',
-      thursday: '11:00 AM - 9:00 PM',
-      friday: '11:00 AM - 3:00 AM',
-      saturday: '11:00 AM - 3:00 AM',
-      sunday: 'Closed'
+      Monday: '11:00 AM - 9:00 PM',
+      Tuesday: '11:00 AM - 9:00 PM',
+      Wednesday: '11:00 AM - 9:00 PM',
+      Thursday: '11:00 AM - 9:00 PM',
+      Friday: '11:00 AM - 3:00 AM',
+      Saturday: '11:00 AM - 3:00 AM',
+      Sunday: 'Closed'
     },
     coordinates: { lat: 35.3737072, lng: -83.2241083 }
   },
   {
     id: Date.now().toString(),
     name: 'Bread Heads Tiki Shak',
-    category: 'restaurant',
+    category: 'restaurants',
     description: 'Tropical-themed eatery serving fresh bread, sandwiches, and tiki-inspired drinks in a laid-back atmosphere.',
     address: '586 W Main St, Sylva, NC 28779',
     phone: '(828) 586-1234',
     website: 'https://www.breadheadstikishak.com',
     hours: {
-      monday: 'Closed',
-      tuesday: '11:00 AM - 8:00 PM',
-      wednesday: '11:00 AM - 8:00 PM',
-      thursday: '11:00 AM - 8:00 PM',
-      friday: '11:00 AM - 9:00 PM',
-      saturday: '11:00 AM - 9:00 PM',
-      sunday: '11:00 AM - 5:00 PM'
+      Monday: 'Closed',
+      Tuesday: '11:00 AM - 8:00 PM',
+      Wednesday: '11:00 AM - 8:00 PM',
+      Thursday: '11:00 AM - 8:00 PM',
+      Friday: '11:00 AM - 9:00 PM',
+      Saturday: '11:00 AM - 9:00 PM',
+      Sunday: '11:00 AM - 5:00 PM'
     },
     coordinates: { lat: 35.3736943, lng: -83.2237532 }
   }
