@@ -39,7 +39,7 @@ export default function Footer() {
             <p className="mb-2">Email: info@exploresylva.com</p>
             <p>Address: Sylva, NC 28779</p>
           </div>
-          <div className="text-sm text-gray-300 md:col-span-2">
+          <div className="text-sm text-gray-300 md:col-span-2 text-center">
             <p>© {year} Explore Sylva. All rights reserved.</p>
           </div>
         </div>
