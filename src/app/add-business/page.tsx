@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Business } from '@/types/business';
+import { categories } from '@/data/businesses';
 import { geocodeAddress } from '@/utils/geocode';
 
 export default function AddBusiness() {
@@ -144,10 +145,14 @@ export default function AddBusiness() {
                   className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
                 >
                   <option value="">Select a category</option>
-                  <option value="restaurant">Restaurant</option>
-                  <option value="retail">Retail</option>
-                  <option value="service">Service</option>
-                  <option value="other">Other</option>
+                  <option value="restaurants">Restaurants</option>
+                  <option value="breweries">Breweries</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="services">Services</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="outdoors">Outdoors</option>
+                  <option value="lodging">Lodging</option>
+                  <option value="arts">Arts & Culture</option>
                 </select>
               </div>
             </div>
