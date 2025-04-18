@@ -1,3 +1,4 @@
+
 import { NextResponse } from 'next/server';
 import { Business } from '@/types/business';
 import { readBusinesses } from '@/utils/businessUtils';
@@ -41,13 +42,14 @@ export async function PUT(
     const mergedBusiness = { ...businesses[index], ...updatedBusiness };
     businesses[index] = mergedBusiness;
 
-    const filePath = path.join(process.cwd(), 'data', 'businesses.json');
+    const filePath = path.join(process.cwd(), 'src', 'data', 'businesses.json');
     await fs.writeFile(filePath, JSON.stringify(businesses, null, 2));
 
     return NextResponse.json(mergedBusiness);
   } catch (error) {
+    console.error('Update error:', error);
     return NextResponse.json(
-      { error: 'Failed to update business' },
+      { error: error instanceof Error ? error.message : 'Failed to update business' },
       { status: 500 }
     );
   }
@@ -65,7 +67,7 @@ export async function DELETE(
       return NextResponse.json({ error: 'Business not found' }, { status: 404 });
     }
 
-    const filePath = path.join(process.cwd(), 'data', 'businesses.json');
+    const filePath = path.join(process.cwd(), 'src', 'data', 'businesses.json');
     await fs.writeFile(filePath, JSON.stringify(filteredBusinesses, null, 2));
 
     return NextResponse.json({ success: true }, { status: 200 });
@@ -76,4 +78,4 @@ export async function DELETE(
       { status: 500 }
     );
   }
-} 
+}
