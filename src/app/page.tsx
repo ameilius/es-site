@@ -48,9 +48,13 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <main className="min-h-screen p-4">
-        <div className="flex justify-center items-center h-[50vh]">
-          <p>Loading businesses...</p>
+      <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-white shadow-xl rounded-lg p-8">
+            <div className="flex justify-center items-center h-[50vh]">
+              <p className="text-gray-600">Loading businesses...</p>
+            </div>
+          </div>
         </div>
       </main>
     );
@@ -58,100 +62,144 @@ export default function Home() {
 
   if (error) {
     return (
-      <main className="min-h-screen p-4">
-        <div className="flex justify-center items-center h-[50vh]">
-          <p className="text-red-500">Error: {error}</p>
+      <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-white shadow-xl rounded-lg p-8">
+            <div className="bg-red-50 border-l-4 border-red-400 p-4">
+              <div className="flex">
+                <div className="flex-shrink-0">
+                  <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="ml-3">
+                  <p className="text-sm text-red-700">{error}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen p-4">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-4xl font-bold">Explore Sylva</h1>
-        <Link
-          href="/add-business"
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Add Business
-        </Link>
-      </div>
+    <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-white shadow-xl rounded-lg p-8">
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h1 className="text-3xl font-extrabold text-gray-900">Explore Sylva</h1>
+              <p className="mt-2 text-sm text-gray-600">Discover local businesses in Sylva, NC</p>
+            </div>
+            <Link
+              href="/add-business"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Add Business
+            </Link>
+          </div>
       
-      <div className="flex flex-col md:flex-row gap-4 mb-6">
-        <div className="flex-1">
-          <input
-            type="text"
-            placeholder="Search businesses..."
-            className="w-full p-2 border rounded"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
-        <div className="flex gap-2">
-          <select
-            className="p-2 border rounded"
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-          >
-            <option value="all">All Categories</option>
-            {categories.map((category) => (
-              <option key={category.id} value={category.id}>
-                {category.icon} {category.name}
-              </option>
-            ))}
-          </select>
-          <button
-            className={`px-4 py-2 rounded ${view === 'map' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-            onClick={() => setView('map')}
-          >
-            Map View
-          </button>
-          <button
-            className={`px-4 py-2 rounded ${view === 'list' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-            onClick={() => setView('list')}
-          >
-            List View
-          </button>
+          <div className="flex flex-col md:flex-row gap-6 mb-8">
+            <div className="flex-1">
+              <input
+                type="text"
+                placeholder="Search businesses..."
+                className="w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+            <div className="flex gap-4">
+              <select
+                className="rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+              >
+                <option value="all">All Categories</option>
+                {categories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {category.icon} {category.name}
+                  </option>
+                ))}
+              </select>
+              <button
+                className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm ${
+                  view === 'map' 
+                    ? 'bg-indigo-600 text-white hover:bg-indigo-700' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                onClick={() => setView('map')}
+              >
+                Map View
+              </button>
+              <button
+                className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm ${
+                  view === 'list' 
+                    ? 'bg-indigo-600 text-white hover:bg-indigo-700' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                onClick={() => setView('list')}
+              >
+                List View
+              </button>
+            </div>
+          </div>
+
+          {filteredBusinesses.length === 0 ? (
+            <div className="text-center py-8">
+              <p className="text-gray-500">No businesses found matching your criteria.</p>
+            </div>
+          ) : view === 'map' ? (
+            <div className="h-[600px] w-full rounded-lg overflow-hidden">
+              <Map businesses={filteredBusinesses} />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredBusinesses.map((business) => (
+                <BusinessCard key={business.id} business={business} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
-
-      {filteredBusinesses.length === 0 ? (
-        <div className="text-center py-8">
-          <p className="text-gray-500">No businesses found matching your criteria.</p>
-        </div>
-      ) : view === 'map' ? (
-        <div className="h-[600px] w-full">
-          <Map businesses={filteredBusinesses} />
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredBusinesses.map((business) => (
-            <BusinessCard key={business.id} business={business} />
-          ))}
-        </div>
-      )}
     </main>
   );
 }
 
 function BusinessCard({ business }: { business: Business }) {
   return (
-    <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
-      <h2 className="text-xl font-semibold mb-2">{business.name}</h2>
-      <p className="text-gray-600 mb-2">{business.description}</p>
-      <p className="text-sm text-gray-500 mb-2">{business.address}</p>
-      <p className="text-sm text-gray-500">{business.phone}</p>
-      {business.website && (
-        <a
-          href={business.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 hover:underline text-sm"
-        >
-          Visit Website
-        </a>
-      )}
+    <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+      <h2 className="text-xl font-semibold text-gray-900 mb-3">{business.name}</h2>
+      <p className="text-gray-600 mb-4">{business.description}</p>
+      <div className="space-y-2">
+        <p className="text-sm text-gray-500 flex items-center">
+          <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          {business.address}
+        </p>
+        <p className="text-sm text-gray-500 flex items-center">
+          <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          {business.phone}
+        </p>
+        {business.website && (
+          <a
+            href={business.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-indigo-600 hover:text-indigo-500 flex items-center"
+          >
+            <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+            Visit Website
+          </a>
+        )}
+      </div>
     </div>
   );
 } 
