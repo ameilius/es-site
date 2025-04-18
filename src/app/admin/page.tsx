@@ -122,13 +122,13 @@ export default function AdminPage() {
             <div className="flex gap-2">
               <button
                 onClick={() => setEditingBusiness(business)}
-                className="text-blue-500 hover:text-blue-700"
+                className="px-3 py-1.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Edit
               </button>
               <button
                 onClick={() => handleDelete(business.id)}
-                className="text-red-500 hover:text-red-700"
+                className="px-3 py-1.5 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               >
                 Delete
               </button>
