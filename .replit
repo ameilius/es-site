@@ -1,11 +1,10 @@
+language = "nodejs"
 run = "npm run dev"
-hidden = [".next", "node_modules"]
-nix = false
 entrypoint = "index.js"
 
 [env]
 NODE_ENV = "development"
 
 [deployment]
-run = ["sh", "-c", "npm run build && npm run start"]
+run = "npm run build && npm run start"
 deploymentTarget = "cloudrun" 
