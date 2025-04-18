@@ -2,6 +2,7 @@ import { Business, BusinessCategory } from '@/types/business';
 
 export const categories: BusinessCategory[] = [
   { id: 'restaurants', name: 'Restaurants', icon: '🍽️' },
+  { id: 'breweries', name: 'Breweries', icon: '🍺' },
   { id: 'shopping', name: 'Shopping', icon: '🛍️' },
   { id: 'services', name: 'Services', icon: '🔧' },
   { id: 'entertainment', name: 'Entertainment', icon: '🎭' },
