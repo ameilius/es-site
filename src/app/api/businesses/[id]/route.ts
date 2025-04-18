@@ -38,12 +38,13 @@ export async function PUT(
     }
 
     const updatedBusiness = await request.json();
-    businesses[index] = { ...businesses[index], ...updatedBusiness };
+    const mergedBusiness = { ...businesses[index], ...updatedBusiness };
+    businesses[index] = mergedBusiness;
 
     const filePath = path.join(process.cwd(), 'data', 'businesses.json');
     await fs.writeFile(filePath, JSON.stringify(businesses, null, 2));
 
-    return NextResponse.json(businesses[index]);
+    return NextResponse.json(mergedBusiness);
   } catch (error) {
     return NextResponse.json(
       { error: 'Failed to update business' },
