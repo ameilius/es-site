@@ -168,9 +168,16 @@ export default function Home() {
 }
 
 function BusinessCard({ business }: { business: Business }) {
+  // Get the category icon from the categories array
+  const category = categories.find(cat => cat.id === business.category);
+  
   return (
     <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-      <h2 className="text-xl font-semibold text-gray-900 mb-3">{business.name}</h2>
+      <h2 className="text-xl font-semibold text-gray-900 mb-1">{business.name}</h2>
+      <div className="flex items-center text-sm text-gray-500 mb-3">
+        <span className="mr-1">{category?.icon}</span>
+        <span>{category?.name}</span>
+      </div>
       <p className="text-gray-600 mb-4">{business.description}</p>
       <div className="space-y-2">
         <p className="text-sm text-gray-500 flex items-center">
