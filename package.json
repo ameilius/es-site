@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "type-check": "tsc --noEmit",
     "export": "next build && next export",
     "add-tryon-businesses": "ts-node src/scripts/addTryonBusinesses.ts",
     "add-sylva-businesses": "ts-node src/scripts/addSylvaBusinesses.ts",
