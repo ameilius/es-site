@@ -21,9 +21,9 @@ export default function LoginPage() {
 
       if (result?.error) {
         setError('Invalid credentials');
-      } else {
-        router.push('/admin');
+        return;
       }
+      router.push('/admin');
     } catch (error) {
       setError('An error occurred. Please try again.');
     }
