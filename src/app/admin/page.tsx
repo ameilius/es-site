@@ -149,9 +149,9 @@ export default function AdminPage() {
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(editingBusiness),
                 });
-                
+
                 if (!response.ok) throw new Error('Failed to update business');
-                
+
                 const updatedBusiness = await response.json();
                 setBusinesses(businesses.map(b => 
                   b.id === updatedBusiness.id ? updatedBusiness : b
@@ -168,7 +168,7 @@ export default function AdminPage() {
                     type="text"
                     value={editingBusiness.name}
                     onChange={e => setEditingBusiness({...editingBusiness, name: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
                 <div>
@@ -176,7 +176,7 @@ export default function AdminPage() {
                   <textarea
                     value={editingBusiness.description}
                     onChange={e => setEditingBusiness({...editingBusiness, description: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
                 <div>
@@ -185,7 +185,7 @@ export default function AdminPage() {
                     type="text"
                     value={editingBusiness.address}
                     onChange={e => setEditingBusiness({...editingBusiness, address: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
                 <div>
@@ -194,7 +194,7 @@ export default function AdminPage() {
                     type="text"
                     value={editingBusiness.phone}
                     onChange={e => setEditingBusiness({...editingBusiness, phone: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
                 <div>
@@ -203,7 +203,7 @@ export default function AdminPage() {
                     type="text"
                     value={editingBusiness.website || ''}
                     onChange={e => setEditingBusiness({...editingBusiness, website: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -228,4 +228,4 @@ export default function AdminPage() {
       )}
     </div>
   );
-} 
+}
