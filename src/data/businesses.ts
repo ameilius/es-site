@@ -252,4 +252,42 @@ export const businesses: Business[] = [
     },
     imageUrl: '/images/medical-center.jpg',
   },
+
+  {
+    id: '1744933154778',
+    name: 'Cosmic Carryout',
+    category: 'restaurant',
+    description: 'Late-night takeout spot offering burgers, sandwiches, and comfort food.',
+    address: '646 W Main St, Sylva, NC 28779',
+    phone: '(828) 586-2345',
+    hours: {
+      monday: '11:00 AM - 9:00 PM',
+      tuesday: '11:00 AM - 9:00 PM',
+      wednesday: '11:00 AM - 9:00 PM',
+      thursday: '11:00 AM - 9:00 PM',
+      friday: '11:00 AM - 3:00 AM',
+      saturday: '11:00 AM - 3:00 AM',
+      sunday: 'Closed'
+    },
+    coordinates: { lat: 35.3737072, lng: -83.2241083 }
+  },
+  {
+    id: Date.now().toString(),
+    name: 'Bread Heads Tiki Shak',
+    category: 'restaurant',
+    description: 'Tropical-themed eatery serving fresh bread, sandwiches, and tiki-inspired drinks in a laid-back atmosphere.',
+    address: '586 W Main St, Sylva, NC 28779',
+    phone: '(828) 586-1234',
+    website: 'https://www.breadheadstikishak.com',
+    hours: {
+      monday: 'Closed',
+      tuesday: '11:00 AM - 8:00 PM',
+      wednesday: '11:00 AM - 8:00 PM',
+      thursday: '11:00 AM - 8:00 PM',
+      friday: '11:00 AM - 9:00 PM',
+      saturday: '11:00 AM - 9:00 PM',
+      sunday: '11:00 AM - 5:00 PM'
+    },
+    coordinates: { lat: 35.3736943, lng: -83.2237532 }
+  }
 ]; 
