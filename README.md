@@ -1,15 +1,17 @@
-# Explore Sylva
+# Explore Sylva Business Directory
 
-A modern web application for showcasing local businesses in Sylva, NC and surrounding areas, featuring an interactive map and list view.
+A Next.js application for managing and displaying local businesses in Sylva, NC.
 
 ## Features
 
-- Interactive map using OpenStreetMap
-- Toggle between map and list views
-- Search and filter businesses
-- Category-based filtering
+- Interactive map of local businesses
+- Business details and information
+- Admin panel for managing businesses
 - Responsive design
-- Business details with contact information
+
+## Deployment Status
+
+Testing GitHub Actions deployment to DirectAdmin hosting.
 
 ## Getting Started
 
@@ -18,44 +20,3 @@ A modern web application for showcasing local businesses in Sylva, NC and surrou
    ```bash
    npm install
    ```
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Adding Businesses
-
-To add new businesses, edit the `src/data/businesses.ts` file. Each business should follow this structure:
-
-```typescript
-{
-  id: string;
-  name: string;
-  description: string;
-  category: string;
-  address: string;
-  phone: string;
-  website?: string;
-  coordinates: {
-    lat: number;
-    lng: number;
-  };
-  hours?: {
-    [key: string]: string;
-  };
-  imageUrl?: string;
-}
-```
-
-## Technologies Used
-
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Leaflet (for maps)
-- React Leaflet
-
-## Contributing
-
-Feel free to submit issues and enhancement requests! 
