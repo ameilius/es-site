@@ -1,13 +1,15 @@
-'use client';
+import { Metadata } from 'next';
 
-import { useSearchParams } from 'next/navigation';
+export const metadata: Metadata = {
+  title: 'Authentication Error',
+};
 
-// This page needs to be dynamic since it uses useSearchParams
-export const dynamic = 'force-dynamic';
-
-export default function ErrorPage() {
-  const searchParams = useSearchParams();
-  const error = searchParams.get('error');
+export default function ErrorPage({
+  searchParams,
+}: {
+  searchParams: { error?: string };
+}) {
+  const error = searchParams.error;
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
