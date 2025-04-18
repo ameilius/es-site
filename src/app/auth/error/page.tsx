@@ -2,6 +2,9 @@
 
 import { useSearchParams } from 'next/navigation';
 
+// This page needs to be dynamic since it uses useSearchParams
+export const dynamic = 'force-dynamic';
+
 export default function ErrorPage() {
   const searchParams = useSearchParams();
   const error = searchParams.get('error');
