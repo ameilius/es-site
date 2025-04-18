@@ -11,6 +11,7 @@ export default function AdminPage() {
   const [businesses, setBusinesses] = useState<Business[]>([]);
   const [selectedBusinesses, setSelectedBusinesses] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [editingBusiness, setEditingBusiness] = useState<Business | null>(null);
 
   useEffect(() => {
     if (status === 'unauthenticated') {
@@ -118,15 +119,113 @@ export default function AdminPage() {
                 <p className="text-gray-600">{business.address}</p>
               </div>
             </div>
-            <button
-              onClick={() => handleDelete(business.id)}
-              className="text-red-500 hover:text-red-700"
-            >
-              Delete
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setEditingBusiness(business)}
+                className="text-blue-500 hover:text-blue-700"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleDelete(business.id)}
+                className="text-red-500 hover:text-red-700"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         ))}
       </div>
+
+      {editingBusiness && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <h2 className="text-2xl font-bold mb-4">Edit Business</h2>
+            <form onSubmit={async (e) => {
+              e.preventDefault();
+              try {
+                const response = await fetch(`/api/businesses/${editingBusiness.id}`, {
+                  method: 'PUT',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(editingBusiness),
+                });
+                
+                if (!response.ok) throw new Error('Failed to update business');
+                
+                const updatedBusiness = await response.json();
+                setBusinesses(businesses.map(b => 
+                  b.id === updatedBusiness.id ? updatedBusiness : b
+                ));
+                setEditingBusiness(null);
+              } catch (error) {
+                setError('Failed to update business');
+              }
+            }}>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Name</label>
+                  <input
+                    type="text"
+                    value={editingBusiness.name}
+                    onChange={e => setEditingBusiness({...editingBusiness, name: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Description</label>
+                  <textarea
+                    value={editingBusiness.description}
+                    onChange={e => setEditingBusiness({...editingBusiness, description: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Address</label>
+                  <input
+                    type="text"
+                    value={editingBusiness.address}
+                    onChange={e => setEditingBusiness({...editingBusiness, address: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Phone</label>
+                  <input
+                    type="text"
+                    value={editingBusiness.phone}
+                    onChange={e => setEditingBusiness({...editingBusiness, phone: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Website</label>
+                  <input
+                    type="text"
+                    value={editingBusiness.website || ''}
+                    onChange={e => setEditingBusiness({...editingBusiness, website: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  />
+                </div>
+              </div>
+              <div className="mt-6 flex justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setEditingBusiness(null)}
+                  className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 } 
