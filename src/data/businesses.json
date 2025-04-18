@@ -2,7 +2,7 @@
   {
     "id": "1744933140246",
     "name": "Innovation Brewing",
-    "category": "restaurant",
+    "category": "restaurants",
     "description": "Local brewery and taproom offering craft beers and pub fare in a relaxed atmosphere.",
     "address": "414 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-9678",
@@ -24,7 +24,7 @@
   {
     "id": "1744933142285",
     "name": "City Lights Cafe",
-    "category": "restaurant",
+    "category": "restaurants",
     "description": "Cozy cafe serving coffee, breakfast, sandwiches, and local craft beer with occasional live music.",
     "address": "3 E Jackson St, Sylva, NC 28779",
     "phone": "(828) 587-2233",
@@ -46,7 +46,7 @@
   {
     "id": "1744933144640",
     "name": "Lulu's on Main",
-    "category": "restaurant",
+    "category": "restaurants",
     "description": "Eclectic restaurant serving creative American cuisine with vegetarian options in an artistic setting.",
     "address": "612 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-8989",
@@ -67,7 +67,7 @@
   {
     "id": "1744933146482",
     "name": "O'Malley's Pub and Grill",
-    "category": "restaurant",
+    "category": "restaurants",
     "description": "Irish pub offering traditional pub fare, craft beers, and sports viewing.",
     "address": "701 W Main St, Sylva, NC 28779",
     "phone": "(828) 631-0554",
@@ -88,7 +88,7 @@
   {
     "id": "1744933147916",
     "name": "White Moon Cafe",
-    "category": "restaurant",
+    "category": "restaurants",
     "description": "Coffee shop and cafe offering breakfast, lunch, and specialty coffee drinks.",
     "address": "545 Mill St, Sylva, NC 28779",
     "phone": "(828) 631-0591",
@@ -110,7 +110,7 @@
   {
     "id": "1744933150885",
     "name": "Guadalupe Cafe",
-    "category": "restaurant",
+    "category": "restaurants",
     "description": "Caribbean-inspired restaurant serving tropical fusion cuisine in a historic building.",
     "address": "606 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-9877",
@@ -132,7 +132,7 @@
   {
     "id": "1744933152729",
     "name": "Mad Batter Food & Film",
-    "category": "restaurant",
+    "category": "restaurants",
     "description": "Unique restaurant combining dining with movie screenings, serving American cuisine and craft beer.",
     "address": "617 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-3555",
@@ -154,7 +154,7 @@
   {
     "id": "1744933154778",
     "name": "Cosmic Carryout",
-    "category": "restaurant",
+    "category": "restaurants",
     "description": "Late-night takeout spot offering burgers, sandwiches, and comfort food.",
     "address": "646 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-2345",
@@ -175,7 +175,7 @@
   {
     "id": "1744933154779",
     "name": "Bread Heads Tiki Shak",
-    "category": "restaurant",
+    "category": "restaurants",
     "description": "Tropical-themed eatery serving fresh bread, sandwiches, and tiki-inspired drinks in a laid-back atmosphere.",
     "address": "586 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-1234",
