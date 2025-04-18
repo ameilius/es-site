@@ -1,14 +1,13 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface InstagramPost {
-  id: string;
-  media_url: string;
+  imageUrl: string;
   caption: string;
-  permalink: string;
-  timestamp: string;
+  link: string;
 }
 
 export default function InstagramPage() {
@@ -18,16 +17,9 @@ export default function InstagramPage() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // In production, this would fetch from Instagram's API
-        // For now, we'll use placeholder data
-        const mockPosts = Array.from({ length: 9 }, (_, i) => ({
-          id: `post-${i}`,
-          media_url: `https://source.unsplash.com/random/600x600?sylva,mountains&sig=${i}`,
-          caption: 'Exploring the beauty of Sylva, NC! #ExploreNC #VisitSylva',
-          permalink: 'https://instagram.com/exploresylva',
-          timestamp: new Date().toISOString()
-        }));
-        setPosts(mockPosts);
+        const response = await fetch('/api/instagram');
+        const data = await response.json();
+        setPosts(data);
       } catch (error) {
         console.error('Error fetching Instagram posts:', error);
       } finally {
@@ -59,18 +51,18 @@ export default function InstagramPage() {
             Follow us <a href="https://instagram.com/exploresylva" className="text-indigo-600 hover:text-indigo-500">@exploresylva</a> for the latest updates!
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post, index) => (
             <a
-              key={post.id}
-              href={post.permalink}
+              key={index}
+              href={post.link}
               target="_blank"
               rel="noopener noreferrer"
               className="block group"
             >
               <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
                 <img
-                  src={post.media_url}
+                  src={post.imageUrl}
                   alt={post.caption}
                   className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-200"
                 />
