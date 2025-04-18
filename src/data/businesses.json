@@ -195,5 +195,19 @@
       "lat": 35.3736943,
       "lng": -83.2237532
     }
+  },
+  {
+    "id": "1745018897167",
+    "name": "The Cut Cocktail Lounge",
+    "category": "bars",
+    "description": "A charming waterin' hole in Sylva, NC, serving craft cocktails, cold beer and delicious snacks",
+    "address": "486 W Main St, Sylva, NC 28779",
+    "phone": "(828) 631-4795",
+    "website": "https://www.instagram.com/thecutcocktaillounge",
+    "hours": {},
+    "coordinates": {
+      "lat": 35.3736707,
+      "lng": -83.2216894
+    }
   }
 ]
