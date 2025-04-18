@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Business } from '@/types/business';
+import { categories } from '@/data/businesses';
 
 // Fix for default marker icons in Leaflet with Next.js
 const DefaultIcon = L.icon({
@@ -54,6 +55,10 @@ export default function Map({ businesses }: MapProps) {
           <Popup>
             <div>
               <h3 className="font-bold">{business.name}</h3>
+              <div className="flex items-center text-sm text-gray-500 my-2">
+                <span className="mr-1">{categories.find(cat => cat.id === business.category)?.icon}</span>
+                <span>{categories.find(cat => cat.id === business.category)?.name}</span>
+              </div>
               <p>{business.address}</p>
               <p>{business.phone}</p>
               {business.website && (
