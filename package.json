@@ -9,7 +9,9 @@
     "lint": "next lint",
     "export": "next build && next export",
     "add-tryon-businesses": "ts-node src/scripts/addTryonBusinesses.ts",
-    "add-sylva-businesses": "ts-node src/scripts/addSylvaBusinesses.ts"
+    "add-sylva-businesses": "ts-node src/scripts/addSylvaBusinesses.ts",
+    "postinstall": "prisma generate",
+    "prisma:push": "prisma db push"
   },
   "dependencies": {
     "@auth/core": "^0.34.2",
