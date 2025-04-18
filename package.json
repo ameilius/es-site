@@ -1,0 +1,43 @@
+{
+  "name": "local-business-directory",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build && next export",
+    "add-tryon-businesses": "ts-node src/scripts/addTryonBusinesses.ts",
+    "add-sylva-businesses": "ts-node src/scripts/addSylvaBusinesses.ts"
+  },
+  "dependencies": {
+    "@auth/core": "^0.34.2",
+    "@prisma/client": "^6.6.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node-fetch": "^2.6.12",
+    "bcryptjs": "^3.0.2",
+    "leaflet": "^1.9.4",
+    "mysql2": "^3.14.0",
+    "next": "^14.1.0",
+    "next-auth": "^5.0.0-beta.25",
+    "node-fetch": "^3.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.8",
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
+    "postcss": "^8.4.35",
+    "prisma": "^6.6.0",
+    "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
