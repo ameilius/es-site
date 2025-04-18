@@ -85,7 +85,15 @@ export default function AdminPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+        <div className="flex items-center gap-4">
+          <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+          <a 
+            href="/"
+            className="text-blue-600 hover:text-blue-800 px-4 py-2 rounded-md border border-blue-600 hover:border-blue-800"
+          >
+            Return to Homepage
+          </a>
+        </div>
         <button
           onClick={handleBulkDelete}
           disabled={selectedBusinesses.length === 0}
