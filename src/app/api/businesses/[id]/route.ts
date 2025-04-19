@@ -1,3 +1,4 @@
+
 import { NextResponse } from 'next/server';
 import { Business } from '@/types/business';
 import { readBusinesses } from '@/utils/businessUtils';
@@ -31,30 +32,27 @@ export async function PUT(
   { params }: { params: { id: string } }
 ) {
   try {
-    const businesses = await readBusinesses();
+    const filePath = path.join(process.cwd(), 'src', 'data', 'businesses.json');
+    const fileData = await fs.readFile(filePath, 'utf-8');
+    const businesses = JSON.parse(fileData);
+    
     const index = businesses.findIndex((b: Business) => b.id === params.id);
-
     if (index === -1) {
       return NextResponse.json({ error: 'Business not found' }, { status: 404 });
     }
 
     const updatedBusiness = await request.json();
-
-    // If address is being updated, get new coordinates
-    if (updatedBusiness.address) {
+    if (updatedBusiness.address && updatedBusiness.address !== businesses[index].address) {
       const coordinates = await geocodeAddress(updatedBusiness.address);
       if (coordinates) {
-        updatedBusiness.coordinates = { lat: coordinates.lat, lng: coordinates.lng };
+        updatedBusiness.coordinates = coordinates;
       }
     }
 
-    const mergedBusiness = { ...businesses[index], ...updatedBusiness };
-    businesses[index] = mergedBusiness;
-
-    const filePath = path.join(process.cwd(), 'src', 'data', 'businesses.json');
+    businesses[index] = { ...businesses[index], ...updatedBusiness };
     await fs.writeFile(filePath, JSON.stringify(businesses, null, 2));
 
-    return NextResponse.json(mergedBusiness);
+    return NextResponse.json(businesses[index]);
   } catch (error) {
     console.error('Update error:', error);
     return NextResponse.json(
@@ -69,17 +67,19 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    const businesses = await readBusinesses();
-    const filteredBusinesses = businesses.filter(b => b.id !== params.id);
+    const filePath = path.join(process.cwd(), 'src', 'data', 'businesses.json');
+    const fileData = await fs.readFile(filePath, 'utf-8');
+    const businesses = JSON.parse(fileData);
+    
+    const filteredBusinesses = businesses.filter((b: Business) => b.id !== params.id);
 
     if (filteredBusinesses.length === businesses.length) {
       return NextResponse.json({ error: 'Business not found' }, { status: 404 });
     }
 
-    const filePath = path.join(process.cwd(), 'src', 'data', 'businesses.json');
     await fs.writeFile(filePath, JSON.stringify(filteredBusinesses, null, 2));
 
-    return NextResponse.json({ success: true }, { status: 200 });
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error deleting business:', error);
     return NextResponse.json(
