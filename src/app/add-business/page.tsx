@@ -19,9 +19,10 @@ export default function AddBusiness() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Add default Sylva coordinates
+      // Add default Sylva coordinates and generate an ID
       const businessData = {
         ...formData,
+        id: Date.now().toString(),
         coordinates: {
           lat: 35.3737,
           lng: -83.2232
