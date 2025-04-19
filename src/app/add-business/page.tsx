@@ -10,6 +10,7 @@ export default function AddBusiness() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
   const [formData, setFormData] = useState<Partial<Business>>({
     name: '',
     categories: [],
@@ -178,16 +179,45 @@ export default function AddBusiness() {
                 <label htmlFor="address" className="block text-sm font-medium text-gray-700">
                   Address *
                 </label>
-                <input
-                  type="text"
-                  id="address"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 focus:dark:border-indigo-500 focus:dark:ring-indigo-500"
-                  placeholder="Enter full address"
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    value={formData.address}
+                    onChange={async (e) => {
+                      handleChange(e);
+                      if (e.target.value.length > 3) {
+                        const response = await fetch(
+                          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(e.target.value)}&countrycodes=us&limit=5`
+                        );
+                        const suggestions = await response.json();
+                        setSuggestions(suggestions.map(s => s.display_name));
+                      } else {
+                        setSuggestions([]);
+                      }
+                    }}
+                    required
+                    className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 focus:dark:border-indigo-500 focus:dark:ring-indigo-500"
+                    placeholder="Enter full address"
+                  />
+                  {suggestions.length > 0 && (
+                    <ul className="absolute z-10 w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md mt-1 max-h-60 overflow-auto shadow-lg">
+                      {suggestions.map((suggestion, index) => (
+                        <li
+                          key={index}
+                          className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-sm"
+                          onClick={() => {
+                            setFormData(prev => ({ ...prev, address: suggestion }));
+                            setSuggestions([]);
+                          }}
+                        >
+                          {suggestion}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
 
               <div>
