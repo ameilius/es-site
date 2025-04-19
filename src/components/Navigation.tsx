@@ -88,14 +88,14 @@ export default function Navigation() {
       </div>
       {isOpen && (
         <div className="sm:hidden fixed top-20 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg dark:bg-gray-800/95">
-          <div className="p-4 space-y-3">
+          <div className="p-6 space-y-4">
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
-              className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
+              className={`block text-center px-6 py-4 text-lg font-medium rounded-xl transition-all duration-200 ${
                 isActive('/')
-                  ? 'text-indigo-600 bg-indigo-50 dark:text-indigo-300 dark:bg-indigo-900/50'
-                  : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600 dark:text-gray-200 dark:hover:bg-gray-700/50 dark:hover:text-indigo-300'
+                  ? 'text-white bg-indigo-600 dark:text-white dark:bg-indigo-500'
+                  : 'text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-indigo-300'
               }`}
             >
               Home
@@ -103,10 +103,10 @@ export default function Navigation() {
             <Link
               href="/add-business"
               onClick={() => setIsOpen(false)}
-              className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
+              className={`block text-center px-6 py-4 text-lg font-medium rounded-xl transition-all duration-200 ${
                 isActive('/add-business')
-                  ? 'text-indigo-600 bg-indigo-50 dark:text-indigo-300 dark:bg-indigo-900/50'
-                  : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600 dark:text-gray-200 dark:hover:bg-gray-700/50 dark:hover:text-indigo-300'
+                  ? 'text-white bg-indigo-600 dark:text-white dark:bg-indigo-500'
+                  : 'text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-indigo-300'
               }`}
             >
               Add Business
