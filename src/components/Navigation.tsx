@@ -14,14 +14,14 @@ export default function Navigation() {
   return (
     <nav className="bg-white/80 backdrop-blur-md w-full shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center">
                 <img 
                   src="/images/eslogo-small.png" 
                   alt="Explore Sylva" 
-                  className="h-12 w-auto" 
+                  className="h-16 w-auto transform hover:scale-105 transition-transform duration-200" 
                   onError={(e) => {
                     console.error('Failed to load logo');
                   }}
