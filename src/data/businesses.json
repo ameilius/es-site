@@ -19,7 +19,10 @@
     "coordinates": {
       "lat": 35.3738774,
       "lng": -83.2204813
-    }
+    },
+    "categories": [
+      "breweries"
+    ]
   },
   {
     "id": "1744933142285",
@@ -41,7 +44,10 @@
     "coordinates": {
       "lat": 35.372899,
       "lng": -83.2234221
-    }
+    },
+    "categories": [
+      "restaurants"
+    ]
   },
   {
     "id": "1744933144640",
@@ -63,14 +69,18 @@
       "lat": 35.3736966,
       "lng": -83.2238065
     },
-    "website": "https://lulusonmain.com"
+    "website": "https://lulusonmain.com",
+    "categories": [
+      "restaurants",
+      "bars"
+    ]
   },
   {
     "id": "1744933146482",
     "name": "O'Malley's Pub and Grill",
     "category": "restaurants",
     "description": "Irish pub offering traditional pub fare, craft beers, and sports viewing.",
-    "address": "701 W Main St, Sylva, NC 28779",
+    "address": "83 Asheville Hwy, Sylva, NC 28779",
     "phone": "(828) 631-0554",
     "hours": {
       "monday": "11:00 AM - 12:00 AM",
@@ -84,7 +94,12 @@
     "coordinates": {
       "lat": 35.3736142,
       "lng": -83.2256642
-    }
+    },
+    "categories": [
+      "bars",
+      "restaurants"
+    ],
+    "website": "http://facebook.com/omalleyspubandgrillsylvanc"
   },
   {
     "id": "1744933147916",
@@ -106,29 +121,11 @@
     "coordinates": {
       "lat": 35.3738153,
       "lng": -83.2219039
-    }
-  },
-  {
-    "id": "1744933150885",
-    "name": "Guadalupe Cafe",
-    "category": "restaurants",
-    "description": "Caribbean-inspired restaurant serving tropical fusion cuisine in a historic building.",
-    "address": "606 W Main St, Sylva, NC 28779",
-    "phone": "(828) 586-9877",
-    "website": "https://www.guadalupecafe.com",
-    "hours": {
-      "monday": "Closed",
-      "tuesday": "11:30 AM - 9:00 PM",
-      "wednesday": "11:30 AM - 9:00 PM",
-      "thursday": "11:30 AM - 9:00 PM",
-      "friday": "11:30 AM - 9:00 PM",
-      "saturday": "11:30 AM - 9:00 PM",
-      "sunday": "Closed"
     },
-    "coordinates": {
-      "lat": 35.3736943,
-      "lng": -83.2237532
-    }
+    "categories": [
+      "restaurants",
+      "bars"
+    ]
   },
   {
     "id": "1744933152729",
@@ -150,7 +147,10 @@
     "coordinates": {
       "lat": 35.3734974,
       "lng": -83.2241358
-    }
+    },
+    "categories": [
+      "restaurants"
+    ]
   },
   {
     "id": "1744933154778",
@@ -172,7 +172,10 @@
       "lat": 35.3737072,
       "lng": -83.2241083
     },
-    "website": "https://cosmiccarryout.com"
+    "website": "https://cosmiccarryout.com",
+    "categories": [
+      "restaurants"
+    ]
   },
   {
     "id": "1744933154779",
@@ -194,7 +197,11 @@
     "coordinates": {
       "lat": 35.3736943,
       "lng": -83.2237532
-    }
+    },
+    "categories": [
+      "bars",
+      "restaurants"
+    ]
   },
   {
     "id": "1745018897167",
@@ -208,6 +215,9 @@
     "coordinates": {
       "lat": 35.3736707,
       "lng": -83.2216894
-    }
+    },
+    "categories": [
+      "bars"
+    ]
   }
 ]
