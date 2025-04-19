@@ -55,9 +55,16 @@ export default function Map({ businesses }: MapProps) {
           <Popup>
             <div>
               <h3 className="font-bold">{business.name}</h3>
-              <div className="flex items-center text-sm text-gray-500 my-2">
-                <span className="mr-1">{categories.find(cat => cat.id === business.category)?.icon}</span>
-                <span>{categories.find(cat => cat.id === business.category)?.name}</span>
+              <div className="flex flex-wrap gap-2 items-center text-sm text-gray-500 my-2">
+                {business.categories?.map(catId => {
+                  const category = categories.find(cat => cat.id === catId);
+                  return category ? (
+                    <div key={catId} className="flex items-center bg-gray-100 px-2 py-1 rounded">
+                      <span className="mr-1">{category.icon}</span>
+                      <span>{category.name}</span>
+                    </div>
+                  ) : null;
+                })}
               </div>
               <p>{business.address}</p>
               <p>{business.phone}</p>
