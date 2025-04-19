@@ -7,7 +7,10 @@ import { categories } from '@/data/businesses';
 import { Business } from '@/types/business';
 
 // Dynamically import the Map component to avoid SSR issues with Leaflet
-const Map = dynamic(() => import('@/components/Map'), {
+const Map = dynamic(() => import('@/components/Map').catch(err => {
+  console.error('Error loading Map component:', err);
+  return () => <div>Error loading map</div>;
+}), {
   ssr: false,
   loading: () => <p>Loading map...</p>,
 });
