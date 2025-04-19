@@ -49,8 +49,15 @@ export default function Map({ businesses }: MapProps) {
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         url={useTheme().theme === 'dark' 
-          ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" 
+          ? "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" 
           : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}
+      />
+      {useTheme().theme === 'dark' && (
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          url="https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png"
+        />
+      )}
       />
       <MarkerClusterGroup
         chunkedLoading
