@@ -94,14 +94,14 @@ export default function Home() {
             </div>
             <Link
               href="/add-business"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 whitespace-nowrap"
             >
               Add Business
             </Link>
           </div>
 
           <div className="flex flex-col md:flex-row gap-6 mb-8">
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <input
                 type="text"
                 placeholder="Search businesses..."
@@ -110,7 +110,7 @@ export default function Home() {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-2 sm:gap-4">
               <select
                 className="rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 focus:dark:border-indigo-500 focus:dark:ring-indigo-500"
                 value={selectedCategory}
