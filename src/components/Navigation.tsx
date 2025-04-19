@@ -17,7 +17,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex">
-            <div className="flex-shrink-0 flex items-center">
+            <div className="flex-shrink-0 flex items-center text-gray-900 dark:text-white">
               <Link href="/" className="flex items-center cursor-pointer">
                 <img 
                   src="/images/eslogo-small.png" 

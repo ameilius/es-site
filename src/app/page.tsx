@@ -84,35 +84,35 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 border border-gray-100">
+        <div className="bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 border border-gray-100 dark:bg-gray-800/80 dark:border-gray-700">
           <div className="flex justify-between items-center mb-8">
             <div>
-              <h1 className="text-3xl font-extrabold text-gray-900">Explore Sylva</h1>
-              <p className="mt-2 text-sm text-gray-600">Discover local businesses in Sylva, NC</p>
+              <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">Explore Sylva</h1>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Discover local businesses in Sylva, NC</p>
             </div>
             <Link
               href="/add-business"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600"
             >
               Add Business
             </Link>
           </div>
-      
+
           <div className="flex flex-col md:flex-row gap-6 mb-8">
             <div className="flex-1">
               <input
                 type="text"
                 placeholder="Search businesses..."
-                className="w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
+                className="w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 focus:dark:border-indigo-500 focus:dark:ring-indigo-500"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
             <div className="flex gap-4">
               <select
-                className="rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
+                className="rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 focus:dark:border-indigo-500 focus:dark:ring-indigo-500"
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
               >
@@ -128,7 +128,9 @@ export default function Home() {
                   view === 'map' 
                     ? 'bg-indigo-600 text-white hover:bg-indigo-700' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:hover:bg-gray-600 dark:${
+                  view === 'map' ? 'bg-gray-700 text-gray-200' : 'bg-gray-800 text-gray-300'
+                }`}
                 onClick={() => setView('map')}
               >
                 Map View
@@ -138,7 +140,9 @@ export default function Home() {
                   view === 'list' 
                     ? 'bg-indigo-600 text-white hover:bg-indigo-700' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:hover:bg-gray-600 dark:${
+                  view === 'list' ? 'bg-gray-700 text-gray-200' : 'bg-gray-800 text-gray-300'
+                }`}
                 onClick={() => setView('list')}
               >
                 List View
@@ -148,7 +152,7 @@ export default function Home() {
 
           {filteredBusinesses.length === 0 ? (
             <div className="text-center py-8">
-              <p className="text-gray-500">No businesses found matching your criteria.</p>
+              <p className="text-gray-500 dark:text-gray-400">No businesses found matching your criteria.</p>
             </div>
           ) : view === 'map' ? (
             <div className="h-[600px] w-full rounded-lg overflow-hidden">
@@ -169,17 +173,17 @@ export default function Home() {
 
 function BusinessCard({ business }: { business: Business }) {
   const businessCategories = categories.filter(cat => business.categories?.includes(cat.id));
-  
+
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-indigo-100 to-transparent opacity-50 -z-10"></div>
-      
+    <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-indigo-100 to-transparent opacity-50 -z-10 dark:from-indigo-700"></div>
+
       <div className="flex justify-between items-start mb-4">
-        <h2 className="text-2xl font-bold text-gray-900 tracking-tight">{business.name}</h2>
+        <h2 className="text-2xl font-bold text-gray-900 tracking-tight dark:text-white">{business.name}</h2>
         <div className="flex gap-2">
           {businessCategories.map((category) => (
             <div key={category.id} 
-                 className="flex items-center bg-indigo-50 px-3 py-1 rounded-full text-indigo-700 font-medium">
+                 className="flex items-center bg-indigo-50 px-3 py-1 rounded-full text-indigo-700 font-medium dark:bg-gray-700 dark:text-gray-200">
               <span className="mr-1.5 text-lg">{category.icon}</span>
               <span className="text-sm">{category.name}</span>
             </div>
@@ -188,35 +192,35 @@ function BusinessCard({ business }: { business: Business }) {
       </div>
 
       <div className="mb-6">
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{business.description}</p>
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 dark:text-gray-400">{business.description}</p>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
         <div className="space-y-3">
-          <p className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
-            <svg className="h-5 w-5 mr-3 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <p className="flex items-center text-gray-600 hover:text-gray-800 transition-colors dark:text-gray-400 dark:hover:text-gray-200">
+            <svg className="h-5 w-5 mr-3 text-indigo-500 dark:text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             <span className="hover:underline">{business.address}</span>
           </p>
-          <p className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
-            <svg className="h-5 w-5 mr-3 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <p className="flex items-center text-gray-600 hover:text-gray-800 transition-colors dark:text-gray-400 dark:hover:text-gray-200">
+            <svg className="h-5 w-5 mr-3 text-indigo-500 dark:text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
             <span className="hover:underline">{business.phone}</span>
           </p>
         </div>
-        
+
         <div className="flex items-center justify-end">
           {business.website && (
             <a
               href={business.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors group"
+              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors group dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
             >
-              <svg className="h-5 w-5 mr-2 transition-transform group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-5 w-5 mr-2 transition-transform group-hover:rotate-12 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
               </svg>
               Visit Website
@@ -226,4 +230,4 @@ function BusinessCard({ business }: { business: Business }) {
       </div>
     </div>
   );
-} 
+}
