@@ -12,7 +12,7 @@ export default function AddBusiness() {
   const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState<Partial<Business>>({
     name: '',
-    category: '',
+    categories: [],
     description: '',
     address: '',
     phone: '',
@@ -38,7 +38,7 @@ export default function AddBusiness() {
       const business: Business = {
         id: Date.now().toString(),
         name: formData.name || '',
-        category: formData.category || '',
+        categories: [formData.category] || [],
         description: formData.description || '',
         address: formData.address || '',
         phone: formData.phone || '',
