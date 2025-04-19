@@ -251,6 +251,40 @@ export default function AdminPage() {
                         className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:bg-gray-600"
                       />
                     </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Latitude</label>
+                        <input
+                          type="number"
+                          step="0.0000001"
+                          value={editingBusiness.coordinates?.lat || ''}
+                          onChange={e => setEditingBusiness({
+                            ...editingBusiness,
+                            coordinates: {
+                              ...editingBusiness.coordinates,
+                              lat: parseFloat(e.target.value)
+                            }
+                          })}
+                          className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:bg-gray-600"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Longitude</label>
+                        <input
+                          type="number"
+                          step="0.0000001"
+                          value={editingBusiness.coordinates?.lng || ''}
+                          onChange={e => setEditingBusiness({
+                            ...editingBusiness,
+                            coordinates: {
+                              ...editingBusiness.coordinates,
+                              lng: parseFloat(e.target.value)
+                            }
+                          })}
+                          className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:bg-gray-600"
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div className="mt-6 flex justify-end gap-3">
                     <button
