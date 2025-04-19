@@ -80,7 +80,7 @@
     "name": "O'Malley's Pub and Grill",
     "category": "restaurants",
     "description": "Irish pub offering traditional pub fare, craft beers, and sports viewing.",
-    "address": "83 Asheville Hwy, Sylva, NC 28779",
+    "address": "83 Asheville Highway, Sylva, NC 28779",
     "phone": "(828) 631-0554",
     "hours": {
       "monday": "11:00 AM - 12:00 AM",
@@ -92,8 +92,8 @@
       "sunday": "12:00 PM - 12:00 AM"
     },
     "coordinates": {
-      "lat": 35.3736142,
-      "lng": -83.2256642
+      "latitude": 34.0522,
+      "longitude": -118.2437
     },
     "categories": [
       "bars",
