@@ -43,16 +43,7 @@ export default function Navigation() {
             >
               Add Business
             </Link>
-            <Link
-              href="/instagram"
-              className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                isActive('/instagram')
-                  ? 'border-indigo-500 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-              }`}
-            >
-              Our Instagram
-            </Link>
+            
           </div>
           <div className="-mr-2 flex items-center sm:hidden">
             <button
@@ -96,16 +87,7 @@ export default function Navigation() {
             >
               Add Business
             </Link>
-            <Link
-              href="/instagram"
-              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                isActive('/instagram')
-                  ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
-                  : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700'
-              }`}
-            >
-              Our Instagram
-            </Link>
+            
           </div>
         </div>
       )}
