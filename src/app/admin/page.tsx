@@ -154,8 +154,8 @@ export default function AdminPage() {
           </div>
 
           {editingBusiness && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 backdrop-blur-sm">
-              <div className="bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 border border-gray-100 dark:bg-gray-800/80 dark:border-gray-700 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center p-4 backdrop-blur-sm" style={{ zIndex: 50 }}>
+              <div className="bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 border border-gray-100 dark:bg-gray-800/80 dark:border-gray-700 max-w-2xl w-full max-h-[90vh] overflow-y-auto mt-[10vh]">
                 <h2 className="text-2xl font-bold mb-4">Edit Business</h2>
                 <form onSubmit={async (e) => {
                   e.preventDefault();
