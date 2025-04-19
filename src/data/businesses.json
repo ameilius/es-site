@@ -295,13 +295,29 @@
       "restaurants"
     ],
     "description": "Our story hails from a wild Italian woman who changed a town forever. A family meatball recipe carried Karen Martar from New York to the mountain town of Sylva, where she opened the aptly named Meatballs in 1983. Serving up delicious pizza and the mouthwatering meatballs she learned to make from her family, her restaurant was a staple on Main Street for 17 years: so much so that having your picture displayed on the wall was considered “One of the most esteemed status symbols of the time” by locals.",
-    "address": "414 B W Main Street, Sylva, NC 28779",
+    "address": "414 W Main Street, Sylva, NC 28779",
     "phone": "(828) 354-0248",
     "website": "https://meatballspizzeria.com",
     "hours": {},
     "coordinates": {
-      "lat": 35.3740799,
-      "lng": -83.2315949
+      "lat": 35.3738774,
+      "lng": -83.2204813
+    }
+  },
+  {
+    "id": "1745067662411",
+    "name": "Balsam Falls Brewing Co.",
+    "categories": [
+      "breweries"
+    ],
+    "description": "Balsam Falls is the true definition of a labor of love. Opened by Husband and Wife, Corey and Laurie Bryson in October 2017, who have since poured their love for craft beer and the community into their business. Known for their creative beer flavors and styles, delicious eats and big personalities, Balsam Falls Brewing Co. is always a joyful place to be. In addition, we regularly push the boundaries and brew unique beers with very limited availability. Drink Fresh, Drink local. Drink Sylva Beer!",
+    "address": "506 W Main St, Sylva, NC 28779",
+    "phone": "(828) 631-1987",
+    "website": "https://balsamfallsbrewing.com",
+    "hours": {},
+    "coordinates": {
+      "lat": 35.373677,
+      "lng": -83.2220465
     }
   }
 ]
