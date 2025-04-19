@@ -1,0 +1,225 @@
+Error: 
+  × the name `getBusinesses` is defined multiple times
+    ╭─[/home/runner/workspace/src/lib/businessStore.ts:25:1]
+ 25 │   return validatedBusiness;
+ 26 │ };
+ 27 │ 
+ 28 │ export const getBusinesses = async (): Promise<Business[]> => {
+    ·              ──────┬──────
+    ·                    ╰── previous definition of `getBusinesses` here
+ 29 │   try {
+ 30 │     const data = await fs.readFile(path.join(dataDir, 'businesses.json'), 'utf-8');
+ 31 │     return JSON.parse(data);
+ 32 │   } catch (error) {
+ 33 │     return [];
+ 34 │   }
+ 35 │ };
+ 36 │ 
+ 37 │ export const clearBusinesses = async () => {
+ 38 │   await fs.writeFile(path.join(dataDir, 'businesses.json'), '[]');
+ 39 │ };
+ 40 │ const dataFilePath = path.join(dataDir, 'businesses.json');
+ 41 │ 
+ 42 │ // Initialize businesses array
+ 43 │ let businesses: Business[] = [];
+ 44 │ 
+ 45 │ // Ensure data directory exists
+ 46 │ async function ensureDataDir() {
+ 47 │   try {
+ 48 │     await fs.access(dataDir);
+ 49 │   } catch {
+ 50 │     await fs.mkdir(dataDir, { recursive: true });
+ 51 │   }
+ 52 │ }
+ 53 │ 
+ 54 │ // Load businesses from file
+ 55 │ async function loadBusinesses() {
+ 56 │   try {
+ 57 │     await ensureDataDir();
+ 58 │     const data = await fs.readFile(dataFilePath, 'utf-8');
+ 59 │     businesses = JSON.parse(data);
+ 60 │     console.log('Loaded businesses from file:', businesses);
+ 61 │   } catch (error) {
+ 62 │     console.error('Error loading businesses from file:', error);
+ 63 │     // If file doesn't exist, create it with empty array
+ 64 │     await fs.writeFile(dataFilePath, '[]');
+ 65 │   }
+ 66 │ }
+ 67 │ 
+ 68 │ // Save businesses to file
+ 69 │ async function saveBusinesses() {
+ 70 │   try {
+ 71 │     await ensureDataDir();
+ 72 │     await fs.writeFile(dataFilePath, JSON.stringify(businesses, null, 2));
+ 73 │     console.log('Saved businesses to file');
+ 74 │   } catch (error) {
+ 75 │     console.error('Error saving businesses to file:', error);
+ 76 │   }
+ 77 │ }
+ 78 │ 
+ 79 │ // Load businesses on module initialization
+ 80 │ loadBusinesses();
+ 81 │ 
+ 82 │ export async function getBusinesses(): Promise<Business[]> {
+    ·                       ──────┬──────
+    ·                             ╰── `getBusinesses` redefined here
+ 83 │   await loadBusinesses();
+ 84 │   return businesses;
+ 85 │ }
+    ╰────
+
+  × the name `addBusiness` is defined multiple times
+    ╭─[/home/runner/workspace/src/lib/businessStore.ts:14:1]
+ 14 │   return business;
+ 15 │ };
+ 16 │ 
+ 17 │ export const addBusiness = async (business: Business) => {
+    ·              ─────┬─────
+    ·                   ╰── previous definition of `addBusiness` here
+ 18 │   const validatedBusiness = await ensureUniqueBusiness(business);
+ 19 │   const businesses = await getBusinesses();
+ 20 │   businesses.push(validatedBusiness);
+ 21 │   await fs.writeFile(
+ 22 │     path.join(dataDir, 'businesses.json'),
+ 23 │     JSON.stringify(businesses, null, 2)
+ 24 │   );
+ 25 │   return validatedBusiness;
+ 26 │ };
+ 27 │ 
+ 28 │ export const getBusinesses = async (): Promise<Business[]> => {
+ 29 │   try {
+ 30 │     const data = await fs.readFile(path.join(dataDir, 'businesses.json'), 'utf-8');
+ 31 │     return JSON.parse(data);
+ 32 │   } catch (error) {
+ 33 │     return [];
+ 34 │   }
+ 35 │ };
+ 36 │ 
+ 37 │ export const clearBusinesses = async () => {
+ 38 │   await fs.writeFile(path.join(dataDir, 'businesses.json'), '[]');
+ 39 │ };
+ 40 │ const dataFilePath = path.join(dataDir, 'businesses.json');
+ 41 │ 
+ 42 │ // Initialize businesses array
+ 43 │ let businesses: Business[] = [];
+ 44 │ 
+ 45 │ // Ensure data directory exists
+ 46 │ async function ensureDataDir() {
+ 47 │   try {
+ 48 │     await fs.access(dataDir);
+ 49 │   } catch {
+ 50 │     await fs.mkdir(dataDir, { recursive: true });
+ 51 │   }
+ 52 │ }
+ 53 │ 
+ 54 │ // Load businesses from file
+ 55 │ async function loadBusinesses() {
+ 56 │   try {
+ 57 │     await ensureDataDir();
+ 58 │     const data = await fs.readFile(dataFilePath, 'utf-8');
+ 59 │     businesses = JSON.parse(data);
+ 60 │     console.log('Loaded businesses from file:', businesses);
+ 61 │   } catch (error) {
+ 62 │     console.error('Error loading businesses from file:', error);
+ 63 │     // If file doesn't exist, create it with empty array
+ 64 │     await fs.writeFile(dataFilePath, '[]');
+ 65 │   }
+ 66 │ }
+ 67 │ 
+ 68 │ // Save businesses to file
+ 69 │ async function saveBusinesses() {
+ 70 │   try {
+ 71 │     await ensureDataDir();
+ 72 │     await fs.writeFile(dataFilePath, JSON.stringify(businesses, null, 2));
+ 73 │     console.log('Saved businesses to file');
+ 74 │   } catch (error) {
+ 75 │     console.error('Error saving businesses to file:', error);
+ 76 │   }
+ 77 │ }
+ 78 │ 
+ 79 │ // Load businesses on module initialization
+ 80 │ loadBusinesses();
+ 81 │ 
+ 82 │ export async function getBusinesses(): Promise<Business[]> {
+ 83 │   await loadBusinesses();
+ 84 │   return businesses;
+ 85 │ }
+ 86 │ 
+ 87 │ export async function addBusiness(business: Business): Promise<void> {
+    ·                       ─────┬─────
+    ·                            ╰── `addBusiness` redefined here
+ 88 │   await loadBusinesses();
+ 89 │   businesses.push(business);
+ 90 │   await saveBusinesses();
+    ╰────
+
+  × the name `clearBusinesses` is defined multiple times
+    ╭─[/home/runner/workspace/src/lib/businessStore.ts:34:1]
+ 34 │   }
+ 35 │ };
+ 36 │ 
+ 37 │ export const clearBusinesses = async () => {
+    ·              ───────┬───────
+    ·                     ╰── previous definition of `clearBusinesses` here
+ 38 │   await fs.writeFile(path.join(dataDir, 'businesses.json'), '[]');
+ 39 │ };
+ 40 │ const dataFilePath = path.join(dataDir, 'businesses.json');
+ 41 │ 
+ 42 │ // Initialize businesses array
+ 43 │ let businesses: Business[] = [];
+ 44 │ 
+ 45 │ // Ensure data directory exists
+ 46 │ async function ensureDataDir() {
+ 47 │   try {
+ 48 │     await fs.access(dataDir);
+ 49 │   } catch {
+ 50 │     await fs.mkdir(dataDir, { recursive: true });
+ 51 │   }
+ 52 │ }
+ 53 │ 
+ 54 │ // Load businesses from file
+ 55 │ async function loadBusinesses() {
+ 56 │   try {
+ 57 │     await ensureDataDir();
+ 58 │     const data = await fs.readFile(dataFilePath, 'utf-8');
+ 59 │     businesses = JSON.parse(data);
+ 60 │     console.log('Loaded businesses from file:', businesses);
+ 61 │   } catch (error) {
+ 62 │     console.error('Error loading businesses from file:', error);
+ 63 │     // If file doesn't exist, create it with empty array
+ 64 │     await fs.writeFile(dataFilePath, '[]');
+ 65 │   }
+ 66 │ }
+ 67 │ 
+ 68 │ // Save businesses to file
+ 69 │ async function saveBusinesses() {
+ 70 │   try {
+ 71 │     await ensureDataDir();
+ 72 │     await fs.writeFile(dataFilePath, JSON.stringify(businesses, null, 2));
+ 73 │     console.log('Saved businesses to file');
+ 74 │   } catch (error) {
+ 75 │     console.error('Error saving businesses to file:', error);
+ 76 │   }
+ 77 │ }
+ 78 │ 
+ 79 │ // Load businesses on module initialization
+ 80 │ loadBusinesses();
+ 81 │ 
+ 82 │ export async function getBusinesses(): Promise<Business[]> {
+ 83 │   await loadBusinesses();
+ 84 │   return businesses;
+ 85 │ }
+ 86 │ 
+ 87 │ export async function addBusiness(business: Business): Promise<void> {
+ 88 │   await loadBusinesses();
+ 89 │   businesses.push(business);
+ 90 │   await saveBusinesses();
+ 91 │ }
+ 92 │ 
+ 93 │ export async function clearBusinesses(): Promise<void> {
+    ·                       ───────┬───────
+    ·                              ╰── `clearBusinesses` redefined here
+ 94 │   businesses = [];
+ 95 │   await saveBusinesses();
+ 96 │ } 
+    ╰────
