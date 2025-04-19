@@ -219,5 +219,22 @@
     "categories": [
       "bars"
     ]
+  },
+  {
+    "id": "1745027887504",
+    "name": "Lazy Hiker Brewing - Sylva Taproom",
+    "category": "breweries",
+    "description": "In 2019 Lazy Hiker expanded and opened a taproom with Mad Batter Kitchen in beautiful downtown Sylva, NC. You can find Lazy Hiker beer in many stores, bottle shops, and restaurants throughout Western North Carolina and North Georgia.  We invite hikers and travelers of every sort to come 'Get Lazy' with us!",
+    "address": "617 W Main St, Sylva, NC 28779",
+    "phone": "(828) 349-2337",
+    "website": "https://lazyhikerbrewing.com/",
+    "hours": {},
+    "coordinates": {
+      "lat": 35.3734974,
+      "lng": -83.2241358
+    },
+    "categories": [
+      "breweries"
+    ]
   }
 ]
