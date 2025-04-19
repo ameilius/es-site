@@ -21,10 +21,9 @@ export default function Navigation() {
                 <img 
                   src="/images/eslogo-small.png" 
                   alt="Explore Sylva" 
-                  className="h-10 w-auto sm:h-12" 
+                  className="h-8 w-auto" 
                   onError={(e) => {
                     console.error('Failed to load logo');
-                    e.currentTarget.src = '/images/temp-logo.png';
                   }}
                 />
               </Link>
