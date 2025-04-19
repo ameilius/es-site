@@ -229,8 +229,7 @@ function BusinessCard({ business }: { business: Business }) {
       </div>
     </div>
   );
+}
 
 Home.displayName = 'Home';
 export default Home;
-
-}
