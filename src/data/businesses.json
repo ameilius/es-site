@@ -287,5 +287,21 @@
       "lat": 35.3736789,
       "lng": -83.2214501
     }
+  },
+  {
+    "id": "1745066573332",
+    "name": "Meatballs Pizzeria",
+    "categories": [
+      "restaurants"
+    ],
+    "description": "Our story hails from a wild Italian woman who changed a town forever. A family meatball recipe carried Karen Martar from New York to the mountain town of Sylva, where she opened the aptly named Meatballs in 1983. Serving up delicious pizza and the mouthwatering meatballs she learned to make from her family, her restaurant was a staple on Main Street for 17 years: so much so that having your picture displayed on the wall was considered “One of the most esteemed status symbols of the time” by locals.",
+    "address": "414 B W Main Street, Sylva, NC 28779",
+    "phone": "(828) 354-0248",
+    "website": "https://meatballspizzeria.com",
+    "hours": {},
+    "coordinates": {
+      "lat": 35.3740799,
+      "lng": -83.2315949
+    }
   }
 ]
