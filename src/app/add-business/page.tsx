@@ -19,13 +19,24 @@ export default function AddBusiness() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Add default Sylva coordinates and generate an ID
+      // Create complete business data with required fields
       const businessData = {
         ...formData,
         id: Date.now().toString(),
         coordinates: {
           lat: 35.3737,
           lng: -83.2232
+        },
+        imageUrl: '',  // Add empty image URL as placeholder
+        hours: {       // Add default hours structure
+          Monday: '',
+          Tuesday: '',
+          Wednesday: '',
+          Thursday: '',
+          Friday: '',
+          Saturday: '',
+          Sunday: ''
+        }
         }
       };
       
