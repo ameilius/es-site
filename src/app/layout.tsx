@@ -11,6 +11,10 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Explore Sylva - The New Orleans of the Carolinas',
   description: 'The New Orleans of the Carolinas - Discover local businesses in Sylva, NC',
+  icons: {
+    icon: '/images/eslogo-small.png',
+    apple: '/images/eslogo-small.png',
+  },
 };
 
 export default function RootLayout({
