@@ -13,6 +13,11 @@ export async function GET() {
       },
     });
 
+    if (!response.data || !Array.isArray(response.data.data)) {
+      console.error('Invalid Instagram API response:', response.data);
+      return NextResponse.json({ error: 'Invalid API response format' }, { status: 500 });
+    }
+
     const posts = response.data.data.slice(0, 9).map((post: any) => ({
       id: post.id,
       media_url: post.media_url,
