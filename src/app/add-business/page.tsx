@@ -29,6 +29,7 @@ export default function AddBusiness() {
       const businessData = {
         id: Date.now().toString(),
         ...formData,
+        category: formData.categories[0], // Set primary category for backwards compatibility
         coordinates: {
           lat: 35.3737,
           lng: -83.2232
