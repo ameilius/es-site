@@ -168,7 +168,6 @@ export default function Home() {
 }
 
 function BusinessCard({ business }: { business: Business }) {
-  const [showModal, setShowModal] = useState(false);
   const businessCategories = categories.filter(cat => business.categories?.includes(cat.id));
   
   return (
@@ -189,37 +188,8 @@ function BusinessCard({ business }: { business: Business }) {
       </div>
 
       <div className="mb-6">
-        <p className="text-gray-600 line-clamp-2 text-sm leading-relaxed">{business.description}</p>
-        {business.description.length > 150 && (
-          <button 
-            onClick={() => setShowModal(true)}
-            className="text-indigo-600 hover:text-indigo-800 text-sm mt-1 font-medium"
-          >
-            Read More
-          </button>
-        )}
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{business.description}</p>
       </div>
-
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-          <div className="bg-white/95 rounded-xl w-full max-w-2xl max-h-[90vh] shadow-2xl border border-gray-100 flex flex-col">
-            <div className="p-6 flex items-start justify-between border-b border-gray-100 sticky top-0 bg-white/95 z-10">
-              <h2 className="text-2xl font-bold text-gray-900 pr-8">{business.name}</h2>
-              <button 
-                onClick={() => setShowModal(false)}
-                className="flex-shrink-0 text-gray-500 hover:text-gray-700 bg-white/80 rounded-full p-2 hover:bg-gray-100 transition-all"
-              >
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-              <p className="text-gray-700 text-lg leading-relaxed tracking-wide whitespace-pre-wrap">{business.description}</p>
-            </div>
-          </div>
-        </div>
-      )}
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
         <div className="space-y-3">
