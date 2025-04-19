@@ -230,4 +230,4 @@ function BusinessCard({ business }: { business: Business }) {
     </div>
   );
 }
-export default Home;
+}
