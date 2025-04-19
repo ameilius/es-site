@@ -286,5 +286,21 @@
       "lat": 35.3737767,
       "lng": -83.2240161
     }
+  },
+  {
+    "id": "1745081529887",
+    "name": "Creekside Oyster House and Grill",
+    "description": "Popular, creekfront eatery offering seafood, American dishes & cocktails in a down-home atmosphere.",
+    "address": "219 W Main St, Sylva, NC 28779",
+    "phone": "(828) 477-4203",
+    "website": "https://creeksideoysterhouse.com",
+    "categories": [
+      "restaurants",
+      "bars"
+    ],
+    "coordinates": {
+      "lat": 35.3739641,
+      "lng": -83.216761
+    }
   }
 ]
