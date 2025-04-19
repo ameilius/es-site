@@ -153,7 +153,7 @@ async function addBusinesses() {
       const businessToAdd: Business = {
         id: Date.now().toString(),
         name: business.name,
-        category: business.category,
+        categories: [business.category],
         description: business.description,
         address: business.address,
         phone: business.phone,
