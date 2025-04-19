@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 
@@ -21,9 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Providers>
-          <Navigation />
-          {children}
-          <Footer />
+          <ThemeProvider>
+            <Navigation />
+            {children}
+            <Footer />
+          </ThemeProvider>
         </Providers>
       </body>
     </html>

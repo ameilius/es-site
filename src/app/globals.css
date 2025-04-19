@@ -7,6 +7,56 @@
   --background-rgb: 255, 255, 255;
 }
 
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 17, 24, 39;
+}
+
+.dark body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.dark .bg-white {
+  background-color: rgb(31, 41, 55);
+}
+
+.dark .text-gray-500 {
+  color: rgb(156, 163, 175);
+}
+
+.dark .text-gray-600 {
+  color: rgb(209, 213, 219);
+}
+
+.dark .text-gray-700 {
+  color: rgb(229, 231, 235);
+}
+
+.dark .text-gray-900 {
+  color: rgb(243, 244, 246);
+}
+
+.dark .border-gray-100 {
+  border-color: rgb(75, 85, 99);
+}
+
+.dark .bg-gray-100 {
+  background-color: rgb(55, 65, 81);
+}
+
+.dark .hover\:bg-gray-50:hover {
+  background-color: rgb(75, 85, 99);
+}
+
+.dark .hover\:text-gray-500:hover {
+  color: rgb(209, 213, 219);
+}
+
+.dark .hover\:text-gray-700:hover {
+  color: rgb(229, 231, 235);
+}
+
 html {
   scroll-behavior: smooth;
 }
