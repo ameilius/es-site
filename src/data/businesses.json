@@ -271,5 +271,21 @@
       "lat": 35.3737462,
       "lng": -83.221335
     }
+  },
+  {
+    "id": "1745066082338",
+    "name": "Santé The Wine Bar",
+    "categories": [
+      "bars"
+    ],
+    "description": "Located directly next door to Ilda, Santé is the culmination of Sommelier Crystal Pace’s passion for unique, top shelf wines. Visit us to indulge in wine by the glass or by the bottle, thoughtfully paired with tapas and charcuterie from Ilda. Discover a new favorite? Guests are welcome to purchase and take home wine by the bottle or by the case. We even host a variety of rotating events and tastings featuring special guests, live music, and more. Featuring a relaxed vibe, true to the heart of downtown Sylva, and a welcoming family of fellow wine lovers, there’s no better destination to kick back, relax, and wine a little.",
+    "address": "470 W Main St Sylva, NC 28779",
+    "phone": "(828) 631-3075",
+    "website": "https://santeinsylva.com",
+    "hours": {},
+    "coordinates": {
+      "lat": 35.3736789,
+      "lng": -83.2214501
+    }
   }
 ]
