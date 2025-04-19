@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Business } from '@/types/business';
+import { categories } from '@/data/businesses';
 
 export default function AdminPage() {
   const { data: session, status } = useSession();
