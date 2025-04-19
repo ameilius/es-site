@@ -59,7 +59,7 @@ export default function Map({ businesses }: MapProps) {
         spiderfyOnMaxZoom={true}
         showCoverageOnHover={false}
       >
-        {businesses.map((business) => (
+        {businesses.filter(business => business.coordinates?.lat && business.coordinates?.lng).map((business) => (
           <Marker
             key={business.id}
             position={[business.coordinates.lat, business.coordinates.lng]}
