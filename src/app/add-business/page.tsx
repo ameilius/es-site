@@ -93,9 +93,9 @@ export default function AddBusiness() {
             </a>
           </div>
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">Add Your Business To Explore Sylva</h1>
+            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">Add Your Business To Explore Sylva!</h1>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-              Join the vibrant business community in The New Orleans of the Carolinas
+              Join the vibrant business community and help your exposure!
             </p>
           </div>
 
