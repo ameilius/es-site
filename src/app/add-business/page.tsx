@@ -137,10 +137,13 @@ export default function AddBusiness() {
                   Category *
                 </label>
                 <select
-                  id="category"
-                  name="category"
-                  value={formData.category}
-                  onChange={handleChange}
+                  id="categories"
+                  name="categories"
+                  value={formData.categories?.[0] || ''}
+                  onChange={(e) => setFormData(prev => ({
+                    ...prev,
+                    categories: e.target.value ? [e.target.value] : []
+                  }))}
                   required
                   className="mt-1 block w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm"
                 >
