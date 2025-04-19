@@ -87,7 +87,7 @@ export default function Navigation() {
         </div>
       </div>
       {isOpen && (
-        <div className="sm:hidden fixed top-20 left-0 right-0 z-[100] bg-white/95 backdrop-blur-md shadow-lg dark:bg-gray-800/95">
+        <div className="sm:hidden fixed top-20 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-md shadow-lg dark:bg-gray-800/95">
           <div className="p-6 space-y-4">
             <Link
               href="/"
