@@ -155,7 +155,7 @@ export default function Home() {
               <Map businesses={filteredBusinesses} />
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {filteredBusinesses.map((business) => (
                 <BusinessCard key={business.id} business={business} />
               ))}
@@ -168,48 +168,59 @@ export default function Home() {
 }
 
 function BusinessCard({ business }: { business: Business }) {
-  // Get the category icon from the categories array
   const businessCategories = categories.filter(cat => business.categories?.includes(cat.id));
   
   return (
-    <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-      <h2 className="text-xl font-semibold text-gray-900 mb-1">{business.name}</h2>
-      <div className="flex flex-wrap gap-2 items-center text-sm text-gray-500 mb-3">
-        {businessCategories.map((category) => (
-          <div key={category.id} className="flex items-center bg-gray-100 px-2 py-1 rounded">
-            <span className="mr-1">{category.icon}</span>
-            <span>{category.name}</span>
-          </div>
-        ))}
+    <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-indigo-100 to-transparent opacity-50 -z-10"></div>
+      
+      <div className="flex justify-between items-start mb-4">
+        <h2 className="text-2xl font-bold text-gray-900 tracking-tight">{business.name}</h2>
+        <div className="flex gap-2">
+          {businessCategories.map((category) => (
+            <div key={category.id} 
+                 className="flex items-center bg-indigo-50 px-3 py-1 rounded-full text-indigo-700 font-medium">
+              <span className="mr-1.5 text-lg">{category.icon}</span>
+              <span className="text-sm">{category.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
-      <p className="text-gray-600 mb-4">{business.description}</p>
-      <div className="space-y-2">
-        <p className="text-sm text-gray-500 flex items-center">
-          <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          {business.address}
-        </p>
-        <p className="text-sm text-gray-500 flex items-center">
-          <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
-          {business.phone}
-        </p>
-        {business.website && (
-          <a
-            href={business.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-indigo-600 hover:text-indigo-500 flex items-center"
-          >
-            <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+
+      <p className="text-gray-600 mb-6 line-clamp-2 text-sm leading-relaxed">{business.description}</p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div className="space-y-3">
+          <p className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+            <svg className="h-5 w-5 mr-3 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            Visit Website
-          </a>
-        )}
+            <span className="hover:underline">{business.address}</span>
+          </p>
+          <p className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+            <svg className="h-5 w-5 mr-3 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span className="hover:underline">{business.phone}</span>
+          </p>
+        </div>
+        
+        <div className="flex items-center justify-end">
+          {business.website && (
+            <a
+              href={business.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors group"
+            >
+              <svg className="h-5 w-5 mr-2 transition-transform group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+              Visit Website
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
