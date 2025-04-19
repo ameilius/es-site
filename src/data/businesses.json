@@ -11,7 +11,9 @@
       "lat": 35.3738774,
       "lng": -83.2204813
     },
-    "categories": ["breweries"]
+    "categories": [
+      "breweries"
+    ]
   },
   {
     "id": "1744933142285",
@@ -25,7 +27,9 @@
       "lat": 35.372899,
       "lng": -83.2234221
     },
-    "categories": ["restaurants"]
+    "categories": [
+      "restaurants"
+    ]
   },
   {
     "id": "1744933144640",
@@ -39,7 +43,10 @@
       "lng": -83.2251446
     },
     "website": "https://lulusonmain.com",
-    "categories": ["restaurants", "bars"]
+    "categories": [
+      "restaurants",
+      "bars"
+    ]
   },
   {
     "id": "1744933146482",
@@ -52,7 +59,10 @@
       "lat": 35.3758883,
       "lng": -83.2131146
     },
-    "categories": ["bars", "restaurants"],
+    "categories": [
+      "bars",
+      "restaurants"
+    ],
     "website": "http://facebook.com/omalleyspubandgrillsylvanc"
   },
   {
@@ -67,7 +77,10 @@
       "lat": 35.3738153,
       "lng": -83.2219039
     },
-    "categories": ["restaurants", "bars"]
+    "categories": [
+      "restaurants",
+      "bars"
+    ]
   },
   {
     "id": "1744933152729",
@@ -81,7 +94,9 @@
       "lat": 35.3734974,
       "lng": -83.2241358
     },
-    "categories": ["restaurants"]
+    "categories": [
+      "restaurants"
+    ]
   },
   {
     "id": "1744933154778",
@@ -95,7 +110,9 @@
       "lng": -83.2241083
     },
     "website": "https://cosmiccarryout.com",
-    "categories": ["restaurants"]
+    "categories": [
+      "restaurants"
+    ]
   },
   {
     "id": "1744933154779",
@@ -109,7 +126,10 @@
       "lat": 35.3736943,
       "lng": -83.2237532
     },
-    "categories": ["bars", "restaurants"]
+    "categories": [
+      "bars",
+      "restaurants"
+    ]
   },
   {
     "id": "1745018897167",
@@ -123,7 +143,9 @@
       "lat": 35.3736707,
       "lng": -83.2216894
     },
-    "categories": ["bars"]
+    "categories": [
+      "bars"
+    ]
   },
   {
     "id": "1745027887504",
@@ -137,7 +159,9 @@
       "lat": 35.3734974,
       "lng": -83.2241358
     },
-    "categories": ["breweries"]
+    "categories": [
+      "breweries"
+    ]
   },
   {
     "id": "1745065110628",
@@ -151,12 +175,18 @@
       "lat": 35.3744772,
       "lng": -83.2259559
     },
-    "categories": ["restaurants", "bars"]
+    "categories": [
+      "restaurants",
+      "bars"
+    ]
   },
   {
     "id": "1745065789173",
     "name": "ILDA",
-    "categories": ["restaurants", "bars"],
+    "categories": [
+      "restaurants",
+      "bars"
+    ],
     "description": "We welcome you to enjoy our rustic Italian-Appalachian cuisine along side inventive craft cocktails and unique wines in the very heart of downtown Sylva. Ilda is the artisan passion project of husband & wife team Chef Santiago Guzzetti and Sommelier Crystal Pace. Nestled in the Smokey Mountains of Western North Carolina, the pair felt called to build a home that is rich in culture, craft and community. Santiago's heritage in Italian cuisine and Crystal's ties to her hometown of Appalachia create a cuisine that is unique, but also honors and respects history. This union of Italian and Southern Appalachian cuisine is the foundation where they will recreate the comfort you found at your grandmother's kitchen table.",
     "address": "462 W Main St Sylva, NC 28779",
     "phone": "(828) 307-2036",
@@ -169,7 +199,9 @@
   {
     "id": "1745066082338",
     "name": "Santé The Wine Bar",
-    "categories": ["bars"],
+    "categories": [
+      "bars"
+    ],
     "description": "Located directly next door to Ilda, Santé is the culmination of Sommelier Crystal Pace's passion for unique, top shelf wines. Visit us to indulge in wine by the glass or by the bottle, thoughtfully paired with tapas and charcuterie from Ilda. Discover a new favorite? Guests are welcome to purchase and take home wine by the bottle or by the case. We even host a variety of rotating events and tastings featuring special guests, live music, and more. Featuring a relaxed vibe, true to the heart of downtown Sylva, and a welcoming family of fellow wine lovers, there's no better destination to kick back, relax, and wine a little.",
     "address": "470 W Main St Sylva, NC 28779",
     "phone": "(828) 631-3075",
@@ -182,7 +214,9 @@
   {
     "id": "1745066573332",
     "name": "Meatballs Pizzeria",
-    "categories": ["restaurants"],
+    "categories": [
+      "restaurants"
+    ],
     "description": "Our story hails from a wild Italian woman who changed a town forever. A family meatball recipe carried Karen Martar from New York to the mountain town of Sylva, where she opened the aptly named Meatballs in 1983. Serving up delicious pizza and the mouthwatering meatballs she learned to make from her family, her restaurant was a staple on Main Street for 17 years: so much so that having your picture displayed on the wall was considered \"One of the most esteemed status symbols of the time\" by locals.",
     "address": "414 W Main Street, Sylva, NC 28779",
     "phone": "(828) 354-0248",
@@ -195,7 +229,9 @@
   {
     "id": "1745067662411",
     "name": "Balsam Falls Brewing Co.",
-    "categories": ["breweries"],
+    "categories": [
+      "breweries"
+    ],
     "description": "Balsam Falls is the true definition of a labor of love. Opened by Husband and Wife, Corey and Laurie Bryson in October 2017, who have since poured their love for craft beer and the community into their business. Known for their creative beer flavors and styles, delicious eats and big personalities, Balsam Falls Brewing Co. is always a joyful place to be. In addition, we regularly push the boundaries and brew unique beers with very limited availability. Drink Fresh, Drink local. Drink Sylva Beer!",
     "address": "506 W Main St, Sylva, NC 28779",
     "phone": "(828) 631-1987",
@@ -203,6 +239,21 @@
     "coordinates": {
       "lat": 35.373677,
       "lng": -83.2220465
+    }
+  },
+  {
+    "id": "1745077770206",
+    "name": "The Coffee Shop",
+    "description": "Homestyle southern cuisine at a reasonable price with friendly service and hometown atmosphere.",
+    "address": "385 W Main St, Sylva, NC 28779",
+    "phone": "(828) 586-2013",
+    "website": "https://www.facebook.com/thesylvacoffeeshop",
+    "categories": [
+      "restaurants"
+    ],
+    "coordinates": {
+      "lat": 35.3737,
+      "lng": -83.2232
     }
   }
 ]
