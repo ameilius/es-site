@@ -18,6 +18,25 @@ export default function AddBusiness() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate required fields
+    if (!formData.name || !formData.description || !formData.address || !formData.phone || formData.categories.length === 0) {
+      alert('Please fill in all required fields (Business Name, Description, Address, Phone Number, and at least one Category)');
+      return;
+    }
+
+    try {
+      const businessData = {
+        ...formData,
+        id: Date.now().toString(),
+        coordinates: {
+          lat: 35.3737,
+          lng: -83.2232
+        }
+      };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     try {
       // Create complete business data with required fields
       const businessData = {
@@ -84,7 +103,7 @@ export default function AddBusiness() {
 
             <div>
               <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                Description
+                Description <span className="text-red-500">*</span>
               </label>
               <textarea
                 name="description"
@@ -114,7 +133,7 @@ export default function AddBusiness() {
 
             <div>
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                Phone Number
+                Phone Number <span className="text-red-500">*</span>
               </label>
               <input
                 type="tel"
@@ -142,7 +161,7 @@ export default function AddBusiness() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Categories
+                Categories <span className="text-red-500">*</span>
               </label>
               <div className="grid grid-cols-2 gap-4">
                 {categories.map(category => (
