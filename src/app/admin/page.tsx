@@ -90,14 +90,8 @@ export default function AdminPage() {
       <div className="max-w-7xl mx-auto">
         <div className="bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 border border-gray-100 dark:bg-gray-800/80 dark:border-gray-700">
           <div className="flex justify-between items-center mb-8">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center">
               <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">Admin Dashboard</h1>
-              <a 
-                href="/"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                Return to Homepage
-              </a>
             </div>
             <button
               onClick={handleBulkDelete}
