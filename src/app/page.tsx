@@ -13,6 +13,7 @@ const Map = dynamic(() => import('@/components/Map').catch(err => {
 }), {
   ssr: false,
   loading: () => <p>Loading map...</p>,
+  displayName: 'DynamicMap'
 });
 
 function Home() {
