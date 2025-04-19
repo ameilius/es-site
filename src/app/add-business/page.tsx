@@ -37,7 +37,6 @@ export default function AddBusiness() {
           Saturday: '',
           Sunday: ''
         }
-        }
       };
       
       const response = await fetch('/api/businesses', {
