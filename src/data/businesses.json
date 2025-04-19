@@ -244,14 +244,13 @@
   {
     "id": "1745077770206",
     "name": "The Coffee Shop",
-    "category": "restaurants",
+    "categories": [
+      "restaurants"
+    ],
     "description": "Homestyle southern cuisine at a reasonable price with friendly service and hometown atmosphere.",
     "address": "385 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-2013",
     "website": "https://www.facebook.com/thesylvacoffeeshop",
-    "categories": [
-      "restaurants"
-    ],
     "coordinates": {
       "lat": 35.3737,
       "lng": -83.2232
@@ -260,15 +259,14 @@
   {
     "id": "1745078536023",
     "name": "Martha's Place 553",
-    "description": "All inclusive restaurant and bar offering good vibes, great food, libations and friendly faces! Private Event space available as well!",
-    "address": "553 W Main St, Sylva, NC 28779",
-    "phone": "(828) 500-4170",
-    "website": "https://www.facebook.com/marthasplace553/",
     "categories": [
       "bars",
       "restaurants"
     ],
-    "category": "bars",
+    "description": "All inclusive restaurant and bar offering good vibes, great food, libations and friendly faces! Private Event space available as well!",
+    "address": "553 W Main St, Sylva, NC 28779",
+    "phone": "(828) 500-4170",
+    "website": "https://www.facebook.com/marthasplace553/",
     "coordinates": {
       "lat": 35.3737,
       "lng": -83.2232
