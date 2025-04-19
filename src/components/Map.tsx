@@ -32,15 +32,20 @@ export default function Map({ businesses }: MapProps) {
 
   useEffect(() => {
     if (mapRef.current && businesses.length > 0) {
-      const businessesWithCoords = businesses.filter(business => business.coordinates?.lat && business.coordinates?.lng);
+      const businessesWithCoords = businesses.filter(business => 
+        business.coordinates?.lat && business.coordinates?.lng &&
+        !isNaN(business.coordinates.lat) && !isNaN(business.coordinates.lng)
+      );
+      
       if (businessesWithCoords.length > 0) {
         const bounds = L.latLngBounds(
           businessesWithCoords.map((business) => [business.coordinates.lat, business.coordinates.lng])
         );
-        mapRef.current.fitBounds(bounds);
+        mapRef.current.fitBounds(bounds, { padding: [50, 50] });
+        mapRef.current.invalidateSize();
       }
     }
-  }, [businesses]);
+  }, [businesses, mapRef.current]);
 
   return (
     <MapContainer
