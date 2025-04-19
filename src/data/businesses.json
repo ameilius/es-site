@@ -256,5 +256,22 @@
       "lat": 35.3737,
       "lng": -83.2232
     }
+  },
+  {
+    "id": "1745078536023",
+    "name": "Martha's Place 553",
+    "description": "All inclusive restaurant and bar offering good vibes, great food, libations and friendly faces! Private Event space available as well!",
+    "address": "553 W Main St, Sylva, NC 28779",
+    "phone": "(828) 500-4170",
+    "website": "https://www.facebook.com/marthasplace553/",
+    "categories": [
+      "bars",
+      "restaurants"
+    ],
+    "category": "bars",
+    "coordinates": {
+      "lat": 35.3737,
+      "lng": -83.2232
+    }
   }
 ]
