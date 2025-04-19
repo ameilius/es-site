@@ -10,9 +10,6 @@ export interface Business {
     lat: number;
     lng: number;
   };
-  hours?: {
-    [key: string]: string;
-  };
   imageUrl?: string;
 }
 

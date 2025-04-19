@@ -7,15 +7,6 @@
     "address": "414 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-9678",
     "website": "https://www.innovation-brewing.com",
-    "hours": {
-      "monday": "2:00 PM - 10:00 PM",
-      "tuesday": "2:00 PM - 10:00 PM",
-      "wednesday": "2:00 PM - 10:00 PM",
-      "thursday": "2:00 PM - 10:00 PM",
-      "friday": "2:00 PM - 11:00 PM",
-      "saturday": "12:00 PM - 11:00 PM",
-      "sunday": "12:00 PM - 8:00 PM"
-    },
     "coordinates": {
       "lat": 35.3738774,
       "lng": -83.2204813
@@ -32,15 +23,6 @@
     "address": "3 E Jackson St, Sylva, NC 28779",
     "phone": "(828) 587-2233",
     "website": "https://www.citylightscafe.com",
-    "hours": {
-      "monday": "7:30 AM - 8:00 PM",
-      "tuesday": "7:30 AM - 8:00 PM",
-      "wednesday": "7:30 AM - 8:00 PM",
-      "thursday": "7:30 AM - 8:00 PM",
-      "friday": "7:30 AM - 8:00 PM",
-      "saturday": "8:00 AM - 8:00 PM",
-      "sunday": "9:00 AM - 3:00 PM"
-    },
     "coordinates": {
       "lat": 35.372899,
       "lng": -83.2234221
@@ -56,15 +38,6 @@
     "description": "Eclectic restaurant serving creative American cuisine with vegetarian options in an artistic setting.",
     "address": "678 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-8989",
-    "hours": {
-      "monday": "Closed",
-      "tuesday": "11:30 AM - 9:00 PM",
-      "wednesday": "11:30 AM - 9:00 PM",
-      "thursday": "11:30 AM - 9:00 PM",
-      "friday": "11:30 AM - 9:00 PM",
-      "saturday": "11:30 AM - 9:00 PM",
-      "sunday": "Closed"
-    },
     "coordinates": {
       "lat": 35.3738486,
       "lng": -83.2251446
@@ -82,15 +55,6 @@
     "description": "Irish pub offering traditional pub fare, craft beers, and sports viewing.",
     "address": "83 US-23 BUS, Sylva, NC 28779",
     "phone": "(828) 631-0554",
-    "hours": {
-      "monday": "11:00 AM - 12:00 AM",
-      "tuesday": "11:00 AM - 12:00 AM",
-      "wednesday": "11:00 AM - 12:00 AM",
-      "thursday": "11:00 AM - 12:00 AM",
-      "friday": "11:00 AM - 2:00 AM",
-      "saturday": "11:00 AM - 2:00 AM",
-      "sunday": "12:00 PM - 12:00 AM"
-    },
     "coordinates": {
       "lat": 35.3758883,
       "lng": -83.2131146
@@ -109,15 +73,6 @@
     "address": "545 Mill St, Sylva, NC 28779",
     "phone": "(828) 631-0591",
     "website": "https://www.whitemooncafe.com",
-    "hours": {
-      "monday": "7:00 AM - 5:00 PM",
-      "tuesday": "7:00 AM - 5:00 PM",
-      "wednesday": "7:00 AM - 5:00 PM",
-      "thursday": "7:00 AM - 5:00 PM",
-      "friday": "7:00 AM - 5:00 PM",
-      "saturday": "8:00 AM - 3:00 PM",
-      "sunday": "Closed"
-    },
     "coordinates": {
       "lat": 35.3738153,
       "lng": -83.2219039
@@ -135,15 +90,6 @@
     "address": "617 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-3555",
     "website": "https://www.madbatterfoodandfilm.com",
-    "hours": {
-      "monday": "Closed",
-      "tuesday": "11:00 AM - 9:00 PM",
-      "wednesday": "11:00 AM - 9:00 PM",
-      "thursday": "11:00 AM - 9:00 PM",
-      "friday": "11:00 AM - 10:00 PM",
-      "saturday": "11:00 AM - 10:00 PM",
-      "sunday": "11:00 AM - 3:00 PM"
-    },
     "coordinates": {
       "lat": 35.3734974,
       "lng": -83.2241358
@@ -159,15 +105,6 @@
     "description": "Late-night takeout spot offering burgers, sandwiches, and comfort food.",
     "address": "646 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-2345",
-    "hours": {
-      "monday": "11:00 AM - 9:00 PM",
-      "tuesday": "11:00 AM - 9:00 PM",
-      "wednesday": "11:00 AM - 9:00 PM",
-      "thursday": "11:00 AM - 9:00 PM",
-      "friday": "11:00 AM - 3:00 AM",
-      "saturday": "11:00 AM - 3:00 AM",
-      "sunday": "Closed"
-    },
     "coordinates": {
       "lat": 35.3737072,
       "lng": -83.2241083
@@ -185,15 +122,6 @@
     "address": "586 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-1234",
     "website": "https://www.breadheadstikishak.com",
-    "hours": {
-      "monday": "Closed",
-      "tuesday": "11:00 AM - 8:00 PM",
-      "wednesday": "11:00 AM - 8:00 PM",
-      "thursday": "11:00 AM - 8:00 PM",
-      "friday": "11:00 AM - 9:00 PM",
-      "saturday": "11:00 AM - 9:00 PM",
-      "sunday": "11:00 AM - 5:00 PM"
-    },
     "coordinates": {
       "lat": 35.3736943,
       "lng": -83.2237532
@@ -211,7 +139,6 @@
     "address": "486 W Main St, Sylva, NC 28779",
     "phone": "(828) 631-4795",
     "website": "https://www.instagram.com/thecutcocktaillounge",
-    "hours": {},
     "coordinates": {
       "lat": 35.3736707,
       "lng": -83.2216894
@@ -228,7 +155,6 @@
     "address": "617 W Main St, Sylva, NC 28779",
     "phone": "(828) 349-2337",
     "website": "https://lazyhikerbrewing.com/",
-    "hours": {},
     "coordinates": {
       "lat": 35.3734974,
       "lng": -83.2241358
@@ -245,7 +171,6 @@
     "address": "5 Grindstaff Cove Rd, Sylva, NC 28779",
     "phone": "(828) 307-2781",
     "website": "https://www.foragerscanteen.com",
-    "hours": {},
     "coordinates": {
       "lat": 35.3744772,
       "lng": -83.2259559
@@ -266,7 +191,6 @@
     "address": "462 W Main St Sylva, NC 28779",
     "phone": "(828) 307-2036",
     "website": "https://www.ildainsylva.com",
-    "hours": {},
     "coordinates": {
       "lat": 35.3737462,
       "lng": -83.221335
@@ -282,7 +206,6 @@
     "address": "470 W Main St Sylva, NC 28779",
     "phone": "(828) 631-3075",
     "website": "https://santeinsylva.com",
-    "hours": {},
     "coordinates": {
       "lat": 35.3736789,
       "lng": -83.2214501
@@ -298,7 +221,6 @@
     "address": "414 W Main Street, Sylva, NC 28779",
     "phone": "(828) 354-0248",
     "website": "https://meatballspizzeria.com",
-    "hours": {},
     "coordinates": {
       "lat": 35.3738774,
       "lng": -83.2204813
@@ -314,7 +236,6 @@
     "address": "506 W Main St, Sylva, NC 28779",
     "phone": "(828) 631-1987",
     "website": "https://balsamfallsbrewing.com",
-    "hours": {},
     "coordinates": {
       "lat": 35.373677,
       "lng": -83.2220465
