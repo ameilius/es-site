@@ -26,16 +26,6 @@ export default function AddBusiness() {
         coordinates: {
           lat: 35.3737,
           lng: -83.2232
-        },
-        imageUrl: '',  // Add empty image URL as placeholder
-        hours: {       // Add default hours structure
-          Monday: '',
-          Tuesday: '',
-          Wednesday: '',
-          Thursday: '',
-          Friday: '',
-          Saturday: '',
-          Sunday: ''
         }
       };
       
