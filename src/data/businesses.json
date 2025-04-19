@@ -254,5 +254,22 @@
       "restaurants",
       "bars"
     ]
+  },
+  {
+    "id": "1745065789173",
+    "name": "ILDA",
+    "categories": [
+      "restaurants",
+      "bars"
+    ],
+    "description": "We welcome you to enjoy our rustic Italian-Appalachian cuisine along side inventive craft cocktails and unique wines in the very heart of downtown Sylva. Ilda is the artisan passion project of husband & wife team Chef Santiago Guzzetti and Sommelier Crystal Pace. Nestled in the Smokey Mountains of Western North Carolina, the pair felt called to build a home that is rich in culture, craft and community. Santiago’s heritage in Italian cuisine and Crystal’s ties to her hometown of Appalachia create a cuisine that is unique, but also honors and respects history. This union of Italian and Southern Appalachian cuisine is the foundation where they will recreate the comfort you found at your grandmother’s kitchen table.",
+    "address": "462 W Main St Sylva, NC 28779",
+    "phone": "(828) 307-2036",
+    "website": "https://www.ildainsylva.com",
+    "hours": {},
+    "coordinates": {
+      "lat": 35.3737462,
+      "lng": -83.221335
+    }
   }
 ]
