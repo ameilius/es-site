@@ -1,3 +1,4 @@
+
 [
   {
     "id": "1744933140246",
@@ -262,7 +263,7 @@
       "restaurants",
       "bars"
     ],
-    "description": "We welcome you to enjoy our rustic Italian-Appalachian cuisine along side inventive craft cocktails and unique wines in the very heart of downtown Sylva. Ilda is the artisan passion project of husband & wife team Chef Santiago Guzzetti and Sommelier Crystal Pace. Nestled in the Smokey Mountains of Western North Carolina, the pair felt called to build a home that is rich in culture, craft and community. Santiago’s heritage in Italian cuisine and Crystal’s ties to her hometown of Appalachia create a cuisine that is unique, but also honors and respects history. This union of Italian and Southern Appalachian cuisine is the foundation where they will recreate the comfort you found at your grandmother’s kitchen table.",
+    "description": "We welcome you to enjoy our rustic Italian-Appalachian cuisine along side inventive craft cocktails and unique wines in the very heart of downtown Sylva. Ilda is the artisan passion project of husband & wife team Chef Santiago Guzzetti and Sommelier Crystal Pace. Nestled in the Smokey Mountains of Western North Carolina, the pair felt called to build a home that is rich in culture, craft and community. Santiago's heritage in Italian cuisine and Crystal's ties to her hometown of Appalachia create a cuisine that is unique, but also honors and respects history. This union of Italian and Southern Appalachian cuisine is the foundation where they will recreate the comfort you found at your grandmother's kitchen table.",
     "address": "462 W Main St Sylva, NC 28779",
     "phone": "(828) 307-2036",
     "website": "https://www.ildainsylva.com",
@@ -278,7 +279,7 @@
     "categories": [
       "bars"
     ],
-    "description": "Located directly next door to Ilda, Santé is the culmination of Sommelier Crystal Pace’s passion for unique, top shelf wines. Visit us to indulge in wine by the glass or by the bottle, thoughtfully paired with tapas and charcuterie from Ilda. Discover a new favorite? Guests are welcome to purchase and take home wine by the bottle or by the case. We even host a variety of rotating events and tastings featuring special guests, live music, and more. Featuring a relaxed vibe, true to the heart of downtown Sylva, and a welcoming family of fellow wine lovers, there’s no better destination to kick back, relax, and wine a little.",
+    "description": "Located directly next door to Ilda, Santé is the culmination of Sommelier Crystal Pace's passion for unique, top shelf wines. Visit us to indulge in wine by the glass or by the bottle, thoughtfully paired with tapas and charcuterie from Ilda. Discover a new favorite? Guests are welcome to purchase and take home wine by the bottle or by the case. We even host a variety of rotating events and tastings featuring special guests, live music, and more. Featuring a relaxed vibe, true to the heart of downtown Sylva, and a welcoming family of fellow wine lovers, there's no better destination to kick back, relax, and wine a little.",
     "address": "470 W Main St Sylva, NC 28779",
     "phone": "(828) 631-3075",
     "website": "https://santeinsylva.com",
@@ -294,7 +295,7 @@
     "categories": [
       "restaurants"
     ],
-    "description": "Our story hails from a wild Italian woman who changed a town forever. A family meatball recipe carried Karen Martar from New York to the mountain town of Sylva, where she opened the aptly named Meatballs in 1983. Serving up delicious pizza and the mouthwatering meatballs she learned to make from her family, her restaurant was a staple on Main Street for 17 years: so much so that having your picture displayed on the wall was considered “One of the most esteemed status symbols of the time” by locals.",
+    "description": "Our story hails from a wild Italian woman who changed a town forever. A family meatball recipe carried Karen Martar from New York to the mountain town of Sylva, where she opened the aptly named Meatballs in 1983. Serving up delicious pizza and the mouthwatering meatballs she learned to make from her family, her restaurant was a staple on Main Street for 17 years: so much so that having your picture displayed on the wall was considered \"One of the most esteemed status symbols of the time\" by locals.",
     "address": "414 W Main Street, Sylva, NC 28779",
     "phone": "(828) 354-0248",
     "website": "https://meatballspizzeria.com",
@@ -319,15 +320,5 @@
       "lat": 35.373677,
       "lng": -83.2220465
     }
-  },
-  {
-    "name": "The Coffee Shop",
-    "description": "Cozy spot serving classic diner eats including pies, plus breakfast, and coffee.",
-    "address": "385 W Main St, Sylva, NC 28779",
-    "phone": "(828) 586-2013",
-    "website": "https://www.facebook.com/thesylvacoffeeshop",
-    "categories": [
-      "restaurants"
-    ]
   }
 ]
