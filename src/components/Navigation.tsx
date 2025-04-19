@@ -13,7 +13,7 @@ export default function Navigation() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="bg-white/80 backdrop-blur-md w-full shadow-sm">
+    <nav className="bg-white/80 backdrop-blur-md w-full shadow-sm dark:bg-gradient-to-b dark:from-indigo-900 dark:to-purple-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex">
