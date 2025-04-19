@@ -5,38 +5,6 @@ import fs from 'fs/promises';
 import path from 'path';
 
 const dataDir = path.join(process.cwd(), 'src/data');
-
-const ensureUniqueBusiness = async (business: Business) => {
-  const businesses = await getBusinesses();
-  if (!business.id) {
-    business.id = Date.now().toString();
-  }
-  return business;
-};
-
-export const addBusiness = async (business: Business) => {
-  const validatedBusiness = await ensureUniqueBusiness(business);
-  const businesses = await getBusinesses();
-  businesses.push(validatedBusiness);
-  await fs.writeFile(
-    path.join(dataDir, 'businesses.json'),
-    JSON.stringify(businesses, null, 2)
-  );
-  return validatedBusiness;
-};
-
-export const getBusinesses = async (): Promise<Business[]> => {
-  try {
-    const data = await fs.readFile(path.join(dataDir, 'businesses.json'), 'utf-8');
-    return JSON.parse(data);
-  } catch (error) {
-    return [];
-  }
-};
-
-export const clearBusinesses = async () => {
-  await fs.writeFile(path.join(dataDir, 'businesses.json'), '[]');
-};
 const dataFilePath = path.join(dataDir, 'businesses.json');
 
 // Initialize businesses array
@@ -76,21 +44,29 @@ async function saveBusinesses() {
   }
 }
 
-// Load businesses on module initialization
-loadBusinesses();
+const ensureUniqueBusiness = async (business: Business) => {
+  if (!business.id) {
+    business.id = Date.now().toString();
+  }
+  return business;
+};
+
+export async function addBusiness(business: Business): Promise<void> {
+  await loadBusinesses();
+  const validatedBusiness = await ensureUniqueBusiness(business);
+  businesses.push(validatedBusiness);
+  await saveBusinesses();
+}
 
 export async function getBusinesses(): Promise<Business[]> {
   await loadBusinesses();
   return businesses;
 }
 
-export async function addBusiness(business: Business): Promise<void> {
-  await loadBusinesses();
-  businesses.push(business);
-  await saveBusinesses();
-}
-
 export async function clearBusinesses(): Promise<void> {
   businesses = [];
   await saveBusinesses();
-} 
+}
+
+// Load businesses on module initialization
+loadBusinesses();
