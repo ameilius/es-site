@@ -54,7 +54,7 @@
     "name": "Lulu's on Main",
     "category": "restaurants",
     "description": "Eclectic restaurant serving creative American cuisine with vegetarian options in an artistic setting.",
-    "address": "612 W Main St, Sylva, NC 28779",
+    "address": "678 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-8989",
     "hours": {
       "monday": "Closed",
@@ -66,8 +66,8 @@
       "sunday": "Closed"
     },
     "coordinates": {
-      "lat": 35.3736966,
-      "lng": -83.2238065
+      "lat": 35.3738486,
+      "lng": -83.2251446
     },
     "website": "https://lulusonmain.com",
     "categories": [
