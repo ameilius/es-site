@@ -40,7 +40,7 @@ export default function Home() {
   }, []);
 
   const filteredBusinesses = businesses.filter((business) => {
-    const matchesCategory = selectedCategory === 'all' || business.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || business.categories?.includes(selectedCategory);
     const matchesSearch = business.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       business.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
