@@ -19,12 +19,21 @@ export default function AddBusiness() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      // Add default Sylva coordinates
+      const businessData = {
+        ...formData,
+        coordinates: {
+          lat: 35.3737,
+          lng: -83.2232
+        }
+      };
+      
       const response = await fetch('/api/businesses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(businessData),
       });
 
       if (!response.ok) throw new Error('Failed to add business');
