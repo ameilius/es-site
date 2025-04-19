@@ -32,10 +32,17 @@ export default function Map({ businesses }: MapProps) {
 
   useEffect(() => {
     if (mapRef.current && businesses.length > 0) {
-      console.log('Filtering businesses:', businesses.map(b => ({
-        name: b.name,
-        coords: b.coordinates
-      })));
+      businesses.forEach(b => {
+        console.log('Business:', b.name);
+        console.log('Coordinates:', b.coordinates);
+        console.log('Lat type:', typeof b.coordinates?.lat);
+        console.log('Lng type:', typeof b.coordinates?.lng);
+        console.log('isNaN check:', !isNaN(b.coordinates?.lat) && !isNaN(b.coordinates?.lng));
+        console.log('Range check:', 
+          b.coordinates?.lat >= -90 && b.coordinates?.lat <= 90 && 
+          b.coordinates?.lng >= -180 && b.coordinates?.lng <= 180
+        );
+      });
       const businessesWithCoords = businesses.filter(business => 
         business.coordinates?.lat && business.coordinates?.lng &&
         !isNaN(business.coordinates.lat) && !isNaN(business.coordinates.lng)
