@@ -67,7 +67,7 @@
   },
   {
     "id": "1744933147916",
-    "name": "White Moon Cafe",
+    "name": "White Moon Cafe & Dark Moon Cocktail Bar",
     "category": "restaurants",
     "description": "Coffee shop and cafe offering breakfast, lunch, and specialty coffee drinks.",
     "address": "545 Mill St, Sylva, NC 28779",
@@ -106,8 +106,8 @@
     "address": "646 W Main St, Sylva, NC 28779",
     "phone": "(828) 586-2345",
     "coordinates": {
-      "lat": 35.3737072,
-      "lng": -83.2241083
+      "lat": 35.3739666,
+      "lng": -83.2201517
     },
     "website": "https://cosmiccarryout.com",
     "categories": [
@@ -270,6 +270,21 @@
     "coordinates": {
       "lat": 35.373181,
       "lng": -83.222885
+    }
+  },
+  {
+    "id": "1745080376044",
+    "name": "Lucy in the Rye",
+    "description": "Scratch made breakfast and lunch in historic downtown Sylva, NC",
+    "address": "612 W Main St, Sylva, NC 28779",
+    "phone": "(828) 586-4601",
+    "website": "https://lucyintherye.com",
+    "categories": [
+      "restaurants"
+    ],
+    "coordinates": {
+      "lat": 35.3737767,
+      "lng": -83.2240161
     }
   }
 ]
