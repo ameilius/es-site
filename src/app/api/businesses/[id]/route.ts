@@ -3,15 +3,7 @@ import { Business } from '@/types/business';
 import { readBusinesses } from '@/utils/businessUtils';
 import fs from 'fs/promises';
 import path from 'path';
-
-// Placeholder for geocoding function - needs implementation
-async function geocodeAddress(address: string): Promise<any | null> {
-  // Implement geocoding logic here using a service like Google Maps Geocoding API or similar.
-  // This example returns a placeholder.  Replace with actual geocoding.
-  console.log("Geocoding address:", address);
-  return { latitude: 34.0522, longitude: -118.2437 }; //Example coordinates
-}
-
+import { geocodeAddress } from '@/utils/geocode';
 
 export async function GET(
   request: Request,
@@ -52,7 +44,7 @@ export async function PUT(
     if (updatedBusiness.address) {
       const coordinates = await geocodeAddress(updatedBusiness.address);
       if (coordinates) {
-        updatedBusiness.coordinates = coordinates;
+        updatedBusiness.coordinates = { lat: coordinates.lat, lng: coordinates.lng };
       }
     }
 
