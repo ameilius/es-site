@@ -56,7 +56,7 @@ export default function Map({ businesses }: MapProps) {
         mapRef.current.invalidateSize();
       }
     }
-  }, [businesses, mapRef.current]);
+  }, [businesses]);
 
   return (
     <MapContainer
