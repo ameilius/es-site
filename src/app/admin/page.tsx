@@ -256,7 +256,7 @@ export default function AdminPage() {
                     <button
                       type="button"
                       onClick={() => setEditingBusiness(null)}
-                      className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md dark:bg-gray-600 dark:text-gray-100 dark:hover:bg-gray-500"
+                      className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md dark:bg-gray-600 dark:text-gray-900 dark:hover:bg-gray-500"
                     >
                       Cancel
                     </button>
