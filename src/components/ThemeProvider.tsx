@@ -29,8 +29,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   };
 
   useEffect(() => {
-    // Force light mode on initial load
+    // Force light mode on initial load and remove any system preference
     document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+    const meta = document.querySelector('meta[name="color-scheme"]');
+    if (meta) {
+      meta.setAttribute('content', 'light');
+    } else {
+      const newMeta = document.createElement('meta');
+      newMeta.name = 'color-scheme';
+      newMeta.content = 'light';
+      document.head.appendChild(newMeta);
+    }
   }, []);
 
   return (
