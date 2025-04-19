@@ -22,7 +22,7 @@ export default function Navigation() {
                 <img 
                   src="/images/eslogo-small.png" 
                   alt="Explore Sylva" 
-                  className="h-16 w-auto transform hover:scale-105 transition-transform duration-200 cursor-pointer" 
+                  className="h-16 w-auto transform hover:scale-105 transition-transform duration-200 cursor-pointer rounded-lg bg-white/90 p-2 dark:bg-white/95 dark:shadow-[0_0_15px_rgba(255,255,255,0.2)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]" 
                   onError={(e) => {
                     console.error('Failed to load logo');
                   }}
