@@ -236,5 +236,23 @@
     "categories": [
       "breweries"
     ]
+  },
+  {
+    "id": "1745065110628",
+    "name": "Foragers Canteen",
+    "category": "restaurants",
+    "description": "Relaxed restaurant near the Great Smoky Mountain Railroad dishing up comfort food and vegetarian fare, plus beer, wine, and cocktails.",
+    "address": "5 Grindstaff Cove Rd, Sylva, NC 28779",
+    "phone": "(828) 307-2781",
+    "website": "https://www.foragerscanteen.com",
+    "hours": {},
+    "coordinates": {
+      "lat": 35.3744772,
+      "lng": -83.2259559
+    },
+    "categories": [
+      "restaurants",
+      "bars"
+    ]
   }
 ]
