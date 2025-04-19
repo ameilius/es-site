@@ -8,8 +8,8 @@
 }
 
 .dark {
-  --foreground-rgb: 229, 231, 235;
-  --background-rgb: 17, 24, 39;
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 10, 10, 15;
 }
 
 body {
@@ -41,23 +41,35 @@ body {
 
 /* Dark mode overrides */
 .dark .bg-white {
-  background-color: rgb(31, 41, 55);
+  background-color: rgb(17, 24, 39);
 }
 
 .dark .text-gray-500 {
-  color: rgb(209, 213, 219);
-}
-
-.dark .text-gray-600 {
   color: rgb(229, 231, 235);
 }
 
-.dark .text-gray-700 {
+.dark .text-gray-600 {
   color: rgb(243, 244, 246);
 }
 
-.dark .text-gray-900 {
+.dark .text-gray-700 {
   color: rgb(249, 250, 251);
+}
+
+.dark .text-gray-900 {
+  color: rgb(255, 255, 255);
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: rgb(17, 24, 39);
+  color: rgb(255, 255, 255);
+  border-color: rgb(75, 85, 99);
+}
+
+.dark button {
+  color: rgb(255, 255, 255);
 }
 
 .dark .border-gray-100 {
