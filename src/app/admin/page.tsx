@@ -85,25 +85,27 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-8">
-        <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-          <a 
-            href="/"
-            className="text-blue-600 hover:text-blue-800 px-4 py-2 rounded-md border border-blue-600 hover:border-blue-800"
-          >
-            Return to Homepage
-          </a>
-        </div>
-        <button
-          onClick={handleBulkDelete}
-          disabled={selectedBusinesses.length === 0}
-          className="bg-red-500 text-white px-4 py-2 rounded disabled:opacity-50"
-        >
-          Delete Selected ({selectedBusinesses.length})
-        </button>
-      </div>
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800">
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 border border-gray-100 dark:bg-gray-800/80 dark:border-gray-700">
+          <div className="flex justify-between items-center mb-8">
+            <div className="flex items-center gap-4">
+              <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">Admin Dashboard</h1>
+              <a 
+                href="/"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Return to Homepage
+              </a>
+            </div>
+            <button
+              onClick={handleBulkDelete}
+              disabled={selectedBusinesses.length === 0}
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50"
+            >
+              Delete Selected ({selectedBusinesses.length})
+            </button>
+          </div>
 
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -120,41 +122,45 @@ export default function AdminPage() {
         {businesses.map(business => (
           <div
             key={business.id}
-            className="border rounded-lg p-4 flex items-center justify-between"
+            className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden dark:bg-gray-800 dark:border-gray-700 mb-4"
           >
-            <div className="flex items-center space-x-4">
-              <input
-                type="checkbox"
-                checked={selectedBusinesses.includes(business.id)}
-                onChange={() => toggleSelect(business.id)}
-                className="h-4 w-4"
-              />
-              <div>
-                <h2 className="text-xl font-semibold">{business.name}</h2>
-                <p className="text-gray-600">{business.address}</p>
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-indigo-100 to-transparent opacity-50 -z-10 dark:from-indigo-700"></div>
+            
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <input
+                  type="checkbox"
+                  checked={selectedBusinesses.includes(business.id)}
+                  onChange={() => toggleSelect(business.id)}
+                  className="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded dark:border-gray-600"
+                />
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 tracking-tight dark:text-white">{business.name}</h2>
+                  <p className="text-gray-600 dark:text-gray-400">{business.address}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={() => setEditingBusiness(business)}
-                className="px-3 py-1.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                Edit
-              </button>
-              <button
-                onClick={() => handleDelete(business.id)}
-                className="px-3 py-1.5 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-              >
-                Delete
-              </button>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setEditingBusiness(business)}
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(business.id)}
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
       {editingBusiness && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 backdrop-blur-sm">
+          <div className="bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 border border-gray-100 dark:bg-gray-800/80 dark:border-gray-700 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <h2 className="text-2xl font-bold mb-4">Edit Business</h2>
             <form onSubmit={async (e) => {
               e.preventDefault();
