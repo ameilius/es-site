@@ -18,7 +18,11 @@ export default function Navigation() {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center">
-                <img src="/images/temp-logo.png" alt="Explore Sylva" className="h-8 w-auto" />
+                <img 
+                  src="/images/eslogo-small.png" 
+                  alt="Explore Sylva" 
+                  className="h-10 w-auto sm:h-12" 
+                />
               </Link>
             </div>
           </div>
