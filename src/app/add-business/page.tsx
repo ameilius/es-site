@@ -186,17 +186,29 @@ export default function AddBusiness() {
                     id="address"
                     name="address"
                     value={formData.address}
-                    onChange={async (e) => {
+                    onChange={(e) => {
                       handleChange(e);
-                      if (e.target.value.length > 3) {
-                        const response = await fetch(
-                          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(e.target.value)}&countrycodes=us&limit=5`
-                        );
-                        const suggestions = await response.json();
-                        setSuggestions(suggestions
-                          .filter(s => s.display_name.includes('Sylva'))
-                          .map(s => formatAddress(s.display_name))
-                        );
+                      const searchTerm = e.target.value;
+                      
+                      if (searchTerm.length > 2) {
+                        // Add a slight delay to avoid too many API calls
+                        const timer = setTimeout(async () => {
+                          try {
+                            const response = await fetch(
+                              `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchTerm + ' Sylva NC')}&countrycodes=us&limit=5`
+                            );
+                            if (!response.ok) throw new Error('Failed to fetch addresses');
+                            const suggestions = await response.json();
+                            setSuggestions(
+                              suggestions.map(s => formatAddress(s.display_name))
+                            );
+                          } catch (error) {
+                            console.error('Error fetching addresses:', error);
+                            setSuggestions([]);
+                          }
+                        }, 300);
+
+                        return () => clearTimeout(timer);
                       } else {
                         setSuggestions([]);
                       }
