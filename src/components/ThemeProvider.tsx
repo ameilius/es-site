@@ -19,12 +19,17 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => {
     setTheme(prev => {
       const newTheme = prev === 'light' ? 'dark' : 'light';
-      document.documentElement.classList.toggle('dark');
+      if (newTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
       return newTheme;
     });
   };
 
   useEffect(() => {
+    // Force light mode on initial load
     document.documentElement.classList.remove('dark');
   }, []);
 
