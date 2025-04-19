@@ -17,11 +17,11 @@ export default function Navigation() {
         <div className="flex justify-between h-20">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center cursor-pointer">
                 <img 
                   src="/images/eslogo-small.png" 
                   alt="Explore Sylva" 
-                  className="h-16 w-auto transform hover:scale-105 transition-transform duration-200" 
+                  className="h-16 w-auto transform hover:scale-105 transition-transform duration-200 cursor-pointer" 
                   onError={(e) => {
                     console.error('Failed to load logo');
                   }}
