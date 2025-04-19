@@ -35,8 +35,8 @@ export default function AddBusiness() {
         website: formData.website,
         categories: formData.categories,
         coordinates: {
-          lat: 35.3737,
-          lng: -83.2232
+          lat: 35.373732,
+          lng: -83.222645
         }
       };
       
