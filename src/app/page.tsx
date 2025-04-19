@@ -15,7 +15,7 @@ const Map = dynamic(() => import('@/components/Map').catch(err => {
   loading: () => <p>Loading map...</p>,
 });
 
-export default function Home() {
+function Home() {
   const [view, setView] = useState<'map' | 'list'>('map');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -229,4 +229,8 @@ function BusinessCard({ business }: { business: Business }) {
       </div>
     </div>
   );
+
+Home.displayName = 'Home';
+export default Home;
+
 }
