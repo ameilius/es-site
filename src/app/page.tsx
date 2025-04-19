@@ -201,18 +201,18 @@ function BusinessCard({ business }: { business: Business }) {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+          <div className="bg-white/95 rounded-xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto relative scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 shadow-2xl border border-gray-100">
             <button 
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 bg-white/80 rounded-full p-1 hover:bg-white transition-all"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">{business.name}</h2>
-            <p className="text-gray-600 text-base leading-relaxed">{business.description}</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">{business.name}</h2>
+            <p className="text-gray-700 text-lg leading-relaxed tracking-wide">{business.description}</p>
           </div>
         </div>
       )}
