@@ -12,13 +12,13 @@ export default function Navigation() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="bg-white/80 backdrop-blur-md fixed w-full z-50 shadow-sm">
+    <nav className="bg-white/80 backdrop-blur-md w-full shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                Explore Sylva
+              <Link href="/" className="flex items-center">
+                <img src="/images/temp-logo.png" alt="Explore Sylva" className="h-8 w-auto" />
               </Link>
             </div>
           </div>
