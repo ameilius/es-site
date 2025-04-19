@@ -38,7 +38,7 @@ export default function AddBusiness() {
       const business: Business = {
         id: Date.now().toString(),
         name: formData.name || '',
-        categories: [formData.category] || [],
+        categories: formData.categories || [],
         description: formData.description || '',
         address: formData.address || '',
         phone: formData.phone || '',
