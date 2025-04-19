@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Business } from '@/types/business';
 import { categories } from '@/data/businesses';
 import { geocodeAddress } from '@/utils/geocode';
+import { formatAddress } from '@/utils/addressFormat';
 
 export default function AddBusiness() {
   const router = useRouter();
@@ -192,7 +193,10 @@ export default function AddBusiness() {
                           `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(e.target.value)}&countrycodes=us&limit=5`
                         );
                         const suggestions = await response.json();
-                        setSuggestions(suggestions.map(s => s.display_name));
+                        setSuggestions(suggestions
+                          .filter(s => s.display_name.includes('Sylva'))
+                          .map(s => formatAddress(s.display_name))
+                        );
                       } else {
                         setSuggestions([]);
                       }
