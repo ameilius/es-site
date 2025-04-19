@@ -169,14 +169,18 @@ export default function Home() {
 
 function BusinessCard({ business }: { business: Business }) {
   // Get the category icon from the categories array
-  const category = categories.find(cat => cat.id === business.category);
+  const businessCategories = categories.filter(cat => business.categories?.includes(cat.id));
   
   return (
     <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
       <h2 className="text-xl font-semibold text-gray-900 mb-1">{business.name}</h2>
-      <div className="flex items-center text-sm text-gray-500 mb-3">
-        <span className="mr-1">{category?.icon}</span>
-        <span>{category?.name}</span>
+      <div className="flex flex-wrap gap-2 items-center text-sm text-gray-500 mb-3">
+        {businessCategories.map((category) => (
+          <div key={category.id} className="flex items-center bg-gray-100 px-2 py-1 rounded">
+            <span className="mr-1">{category.icon}</span>
+            <span>{category.name}</span>
+          </div>
+        ))}
       </div>
       <p className="text-gray-600 mb-4">{business.description}</p>
       <div className="space-y-2">

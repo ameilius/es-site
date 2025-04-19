@@ -14,7 +14,7 @@ model Business {
   id          String   @id @default(cuid())
   name        String
   description String
-  category    String
+  categories  Json
   address     String
   phone       String
   website     String?

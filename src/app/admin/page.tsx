@@ -186,6 +186,27 @@ export default function AdminPage() {
             }}>
               <div className="space-y-4">
                 <div>
+                  <label className="block text-sm font-medium text-gray-700">Categories</label>
+                  <div className="mt-1 grid grid-cols-2 gap-2">
+                    {categories.map((category) => (
+                      <label key={category.id} className="inline-flex items-center">
+                        <input
+                          type="checkbox"
+                          checked={editingBusiness.categories?.includes(category.id)}
+                          onChange={(e) => {
+                            const newCategories = e.target.checked
+                              ? [...(editingBusiness.categories || []), category.id]
+                              : editingBusiness.categories?.filter(c => c !== category.id) || [];
+                            setEditingBusiness({...editingBusiness, categories: newCategories});
+                          }}
+                          className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                        />
+                        <span className="ml-2">{category.icon} {category.name}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+                <div>
                   <label className="block text-sm font-medium text-gray-700">Name</label>
                   <input
                     type="text"
