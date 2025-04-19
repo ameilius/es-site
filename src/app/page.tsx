@@ -230,4 +230,3 @@ function BusinessCard({ business }: { business: Business }) {
     </div>
   );
 }
-}
