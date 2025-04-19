@@ -7,15 +7,11 @@ import { categories } from '@/data/businesses';
 import { Business } from '@/types/business';
 
 // Dynamically import the Map component to avoid SSR issues with Leaflet
-const Map = dynamic(() => import('@/components/Map').catch(err => {
-  console.error('Error loading Map component:', err);
-  return () => <div>Error loading map</div>;
-}), {
+const DynamicMap = dynamic(() => import('@/components/Map'), {
   ssr: false,
-  loading: () => <p>Loading map...</p>
+  loading: () => <p>Loading map...</p>,
 });
 
-Map.displayName = 'DynamicMap';
 
 function Home() {
   const [view, setView] = useState<'map' | 'list'>('map');
@@ -157,7 +153,7 @@ function Home() {
             </div>
           ) : view === 'map' ? (
             <div className="h-[600px] w-full rounded-lg overflow-hidden">
-              <Map businesses={filteredBusinesses} />
+              <DynamicMap businesses={filteredBusinesses} />
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
