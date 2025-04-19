@@ -32,6 +32,10 @@ export default function Map({ businesses }: MapProps) {
 
   useEffect(() => {
     if (mapRef.current && businesses.length > 0) {
+      console.log('Filtering businesses:', businesses.map(b => ({
+        name: b.name,
+        coords: b.coordinates
+      })));
       const businessesWithCoords = businesses.filter(business => 
         business.coordinates?.lat && business.coordinates?.lng &&
         !isNaN(business.coordinates.lat) && !isNaN(business.coordinates.lng)
@@ -64,7 +68,14 @@ export default function Map({ businesses }: MapProps) {
         spiderfyOnMaxZoom={true}
         showCoverageOnHover={false}
       >
-        {businesses.filter(business => business.coordinates?.lat && business.coordinates?.lng).map((business) => (
+        {businesses.filter(business => {
+          const lat = business.coordinates?.lat;
+          const lng = business.coordinates?.lng;
+          return lat !== undefined && lng !== undefined && 
+                 !isNaN(lat) && !isNaN(lng) &&
+                 lat >= -90 && lat <= 90 && 
+                 lng >= -180 && lng <= 180;
+        }).map((business) => (
           <Marker
             key={business.id}
             position={[business.coordinates.lat, business.coordinates.lng]}
