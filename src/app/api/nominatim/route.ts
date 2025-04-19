@@ -3,15 +3,15 @@ import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const query = searchParams.get('q');
+  const address = searchParams.get('address');
 
-  if (!query) {
-    return NextResponse.json({ error: 'Query parameter required' }, { status: 400 });
+  if (!address) {
+    return NextResponse.json({ error: 'Address parameter required' }, { status: 400 });
   }
 
   try {
     const response = await fetch(
-      `https://nominatim.openstreetmap.org/search?format=json&q=${query}&countrycodes=us&limit=5`
+      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}&countrycodes=us&limit=1`
     );
     
     if (!response.ok) {
@@ -19,9 +19,17 @@ export async function GET(request: Request) {
     }
 
     const data = await response.json();
-    return NextResponse.json(data);
+    
+    if (data && data.length > 0) {
+      return NextResponse.json({
+        lat: data[0].lat,
+        lng: data[0].lon
+      });
+    } else {
+      return NextResponse.json({ error: 'Address not found' }, { status: 404 });
+    }
   } catch (error) {
     console.error('Nominatim proxy error:', error);
-    return NextResponse.json({ error: 'Failed to fetch addresses' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to fetch coordinates' }, { status: 500 });
   }
 }
