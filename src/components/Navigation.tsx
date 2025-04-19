@@ -18,7 +18,7 @@ export default function Navigation() {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="text-xl font-bold text-indigo-600">
-                Home
+                
               </Link>
             </div>
           </div>
