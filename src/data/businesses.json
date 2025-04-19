@@ -319,5 +319,15 @@
       "lat": 35.373677,
       "lng": -83.2220465
     }
+  },
+  {
+    "name": "The Coffee Shop",
+    "description": "Cozy spot serving classic diner eats including pies, plus breakfast, and coffee.",
+    "address": "385 W Main St, Sylva, NC 28779",
+    "phone": "(828) 586-2013",
+    "website": "https://www.facebook.com/thesylvacoffeeshop",
+    "categories": [
+      "restaurants"
+    ]
   }
 ]
