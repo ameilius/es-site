@@ -27,8 +27,8 @@ export default function AddBusiness() {
 
     try {
       const businessData = {
-        ...formData,
         id: Date.now().toString(),
+        ...formData,
         coordinates: {
           lat: 35.3737,
           lng: -83.2232
