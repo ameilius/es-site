@@ -12,9 +12,10 @@ const Map = dynamic(() => import('@/components/Map').catch(err => {
   return () => <div>Error loading map</div>;
 }), {
   ssr: false,
-  loading: () => <p>Loading map...</p>,
-  displayName: 'DynamicMap'
+  loading: () => <p>Loading map...</p>
 });
+
+Map.displayName = 'DynamicMap';
 
 function Home() {
   const [view, setView] = useState<'map' | 'list'>('map');
