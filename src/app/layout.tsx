@@ -9,8 +9,8 @@ import Navigation from '@/components/Navigation';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Explore Sylva - Discover Local Businesses',
-  description: 'Find and explore local businesses in Sylva, NC and surrounding areas',
+  title: 'Explore Sylva - The New Orleans of the Carolinas',
+  description: 'The New Orleans of the Carolinas - Discover local businesses in Sylva, NC',
 };
 
 export default function RootLayout({

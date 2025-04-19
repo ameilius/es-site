@@ -90,7 +90,7 @@ export default function Home() {
           <div className="flex justify-between items-center mb-8">
             <div>
               <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">Explore Sylva</h1>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Discover local businesses in Sylva, NC</p>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">The New Orleans of the Carolinas</p>
             </div>
             <Link
               href="/add-business"
