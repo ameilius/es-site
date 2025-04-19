@@ -84,9 +84,9 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white shadow-xl rounded-lg p-8">
+        <div className="bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 border border-gray-100">
           <div className="flex justify-between items-center mb-8">
             <div>
               <h1 className="text-3xl font-extrabold text-gray-900">Explore Sylva</h1>

@@ -12,40 +12,39 @@ export default function Navigation() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav className="bg-white/80 backdrop-blur-md fixed w-full z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="text-xl font-bold text-indigo-600">
-                
+              <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                Explore Sylva
               </Link>
             </div>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
             <Link
               href="/"
-              className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
+              className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 ${
                 isActive('/') 
-                  ? 'border-indigo-500 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  ? 'text-indigo-600 border-b-2 border-indigo-600'
+                  : 'text-gray-500 hover:text-indigo-600'
               }`}
             >
               Home
             </Link>
             <Link
               href="/add-business"
-              className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
+              className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 ${
                 isActive('/add-business')
-                  ? 'border-indigo-500 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  ? 'text-indigo-600 border-b-2 border-indigo-600'
+                  : 'text-gray-500 hover:text-indigo-600'
               }`}
             >
               Add Business
             </Link>
-            
           </div>
-          <div className="-mr-2 flex items-center sm:hidden">
+          <div className="sm:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
@@ -65,29 +64,28 @@ export default function Navigation() {
         </div>
       </div>
       {isOpen && (
-        <div className="sm:hidden">
+        <div className="sm:hidden absolute w-full bg-white/80 backdrop-blur-md">
           <div className="pt-2 pb-3 space-y-1">
             <Link
               href="/"
-              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+              className={`block pl-3 pr-4 py-2 text-base font-medium transition-all duration-200 ${
                 isActive('/')
-                  ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
-                  : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700'
+                  ? 'text-indigo-600 bg-indigo-50'
+                  : 'text-gray-500 hover:bg-gray-50 hover:text-indigo-600'
               }`}
             >
               Home
             </Link>
             <Link
               href="/add-business"
-              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+              className={`block pl-3 pr-4 py-2 text-base font-medium transition-all duration-200 ${
                 isActive('/add-business')
-                  ? 'bg-indigo-50 border-indigo-500 text-indigo-700'
-                  : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700'
+                  ? 'text-indigo-600 bg-indigo-50'
+                  : 'text-gray-500 hover:bg-gray-50 hover:text-indigo-600'
               }`}
             >
               Add Business
             </Link>
-            
           </div>
         </div>
       )}

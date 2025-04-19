@@ -7,9 +7,28 @@
   --background-rgb: 255, 255, 255;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+}
+
+/* Modern input styles */
+input, select, textarea {
+  @apply transition-all duration-200;
+}
+
+/* Modern button styles */
+button {
+  @apply transition-all duration-200;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
 }
 
 /* Leaflet map container styles */
