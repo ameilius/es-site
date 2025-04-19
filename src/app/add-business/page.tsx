@@ -26,6 +26,15 @@ export default function AddBusiness() {
     }
 
     try {
+      // Geocode the address first
+      const geocodeResponse = await fetch(`/api/nominatim?address=${encodeURIComponent(formData.address)}`);
+      const coordinates = await geocodeResponse.json();
+      
+      if (!coordinates.lat || !coordinates.lng) {
+        alert('Could not find coordinates for the provided address. Please check the address and try again.');
+        return;
+      }
+
       const businessData = {
         id: Date.now().toString(),
         name: formData.name,
@@ -35,8 +44,8 @@ export default function AddBusiness() {
         website: formData.website,
         categories: formData.categories,
         coordinates: {
-          lat: 35.373732,
-          lng: -83.222645
+          lat: parseFloat(coordinates.lat),
+          lng: parseFloat(coordinates.lng)
         }
       };
       
