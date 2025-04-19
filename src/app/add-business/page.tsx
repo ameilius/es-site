@@ -189,13 +189,13 @@ export default function AddBusiness() {
                     onChange={(e) => {
                       handleChange(e);
                       const searchTerm = e.target.value;
-                      
+
                       if (searchTerm.length > 2) {
                         // Add a slight delay to avoid too many API calls
                         const timer = setTimeout(async () => {
                           try {
                             const response = await fetch(
-                              `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchTerm + ' Sylva NC')}&countrycodes=us&limit=5`
+                              `/api/nominatim?q=${encodeURIComponent(searchTerm + ' Sylva NC')}`
                             );
                             if (!response.ok) throw new Error('Failed to fetch addresses');
                             const suggestions = await response.json();
