@@ -1,0 +1,229 @@
+Error: 
+  × the name `default` is exported multiple times
+     ╭─[/home/runner/workspace/src/app/page.tsx:15:1]
+  15 │       loading: () => <p>Loading map...</p>,
+  16 │     });
+  17 │     
+  18 │ ╭─▶ export default function Home() {
+  19 │ │     const [view, setView] = useState<'map' | 'list'>('map');
+  20 │ │     const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  21 │ │     const [searchQuery, setSearchQuery] = useState('');
+  22 │ │     const [businesses, setBusinesses] = useState<Business[]>([]);
+  23 │ │     const [isLoading, setIsLoading] = useState(true);
+  24 │ │     const [error, setError] = useState<string | null>(null);
+  25 │ │   
+  26 │ │     useEffect(() => {
+  27 │ │       const fetchBusinesses = async () => {
+  28 │ │         try {
+  29 │ │           const response = await fetch('/api/businesses');
+  30 │ │           if (!response.ok) {
+  31 │ │             throw new Error('Failed to fetch businesses');
+  32 │ │           }
+  33 │ │           const data = await response.json();
+  34 │ │           setBusinesses(data);
+  35 │ │         } catch (err) {
+  36 │ │           setError(err instanceof Error ? err.message : 'An error occurred');
+  37 │ │         } finally {
+  38 │ │           setIsLoading(false);
+  39 │ │         }
+  40 │ │       };
+  41 │ │   
+  42 │ │       fetchBusinesses();
+  43 │ │     }, []);
+  44 │ │   
+  45 │ │     const filteredBusinesses = businesses.filter((business) => {
+  46 │ │       const matchesCategory = selectedCategory === 'all' || business.categories?.includes(selectedCategory);
+  47 │ │       const matchesSearch = business.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  48 │ │         (business.description?.toLowerCase() || '').includes(searchQuery.toLowerCase());
+  49 │ │       return matchesCategory && matchesSearch;
+  50 │ │     });
+  51 │ │   
+  52 │ │     if (isLoading) {
+  53 │ │       return (
+  54 │ │         <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  55 │ │           <div className="max-w-7xl mx-auto">
+  56 │ │             <div className="bg-white shadow-xl rounded-lg p-8">
+  57 │ │               <div className="flex justify-center items-center h-[50vh]">
+  58 │ │                 <p className="text-gray-600">Loading businesses...</p>
+  59 │ │               </div>
+  60 │ │             </div>
+  61 │ │           </div>
+  62 │ │         </main>
+  63 │ │       );
+  64 │ │     }
+  65 │ │   
+  66 │ │     if (error) {
+  67 │ │       return (
+  68 │ │         <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  69 │ │           <div className="max-w-7xl mx-auto">
+  70 │ │             <div className="bg-white shadow-xl rounded-lg p-8">
+  71 │ │               <div className="bg-red-50 border-l-4 border-red-400 p-4">
+  72 │ │                 <div className="flex">
+  73 │ │                   <div className="flex-shrink-0">
+  74 │ │                     <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+  75 │ │                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+  76 │ │                     </svg>
+  77 │ │                   </div>
+  78 │ │                   <div className="ml-3">
+  79 │ │                     <p className="text-sm text-red-700">{error}</p>
+  80 │ │                   </div>
+  81 │ │                 </div>
+  82 │ │               </div>
+  83 │ │             </div>
+  84 │ │           </div>
+  85 │ │         </main>
+  86 │ │       );
+  87 │ │     }
+  88 │ │   
+  89 │ │     return (
+  90 │ │       <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800">
+  91 │ │         <div className="max-w-7xl mx-auto">
+  92 │ │           <div className="bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 border border-gray-100 dark:bg-gray-800/80 dark:border-gray-700">
+  93 │ │             <div className="flex justify-between items-center mb-8">
+  94 │ │               <div>
+  95 │ │                 <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">Explore Sylva</h1>
+  96 │ │                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">The New Orleans of the Carolinas</p>
+  97 │ │               </div>
+  98 │ │               <Link
+  99 │ │                 href="/add-business"
+ 100 │ │                 className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 whitespace-nowrap"
+ 101 │ │               >
+ 102 │ │                 Add Business
+ 103 │ │               </Link>
+ 104 │ │             </div>
+ 105 │ │   
+ 106 │ │             <div className="flex flex-col md:flex-row gap-6 mb-8">
+ 107 │ │               <div className="flex-1 min-w-0">
+ 108 │ │                 <input
+ 109 │ │                   type="text"
+ 110 │ │                   placeholder="Search businesses..."
+ 111 │ │                   className="w-full rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 focus:dark:border-indigo-500 focus:dark:ring-indigo-500"
+ 112 │ │                   value={searchQuery}
+ 113 │ │                   onChange={(e) => setSearchQuery(e.target.value)}
+ 114 │ │                 />
+ 115 │ │               </div>
+ 116 │ │               <div className="flex flex-wrap gap-2 sm:gap-4">
+ 117 │ │                 <select
+ 118 │ │                   className="rounded-md border-2 border-gray-300 bg-gray-50 px-4 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500 sm:text-sm dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 focus:dark:border-indigo-500 focus:dark:ring-indigo-500"
+ 119 │ │                   value={selectedCategory}
+ 120 │ │                   onChange={(e) => setSelectedCategory(e.target.value)}
+ 121 │ │                 >
+ 122 │ │                   <option value="all">All Categories</option>
+ 123 │ │                   {categories.map((category) => (
+ 124 │ │                     <option key={category.id} value={category.id}>
+ 125 │ │                       {category.icon} {category.name}
+ 126 │ │                     </option>
+ 127 │ │                   ))}
+ 128 │ │                 </select>
+ 129 │ │                 <button
+ 130 │ │                   className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm ${
+ 131 │ │                     view === 'map' 
+ 132 │ │                       ? 'bg-indigo-600 text-white hover:bg-indigo-700' 
+ 133 │ │                       : 'bg-gray-100 text-black hover:bg-gray-200 dark:text-black'
+ 134 │ │                   } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+ 135 │ │                   onClick={() => setView('map')}
+ 136 │ │                 >
+ 137 │ │                   Map View
+ 138 │ │                 </button>
+ 139 │ │                 <button
+ 140 │ │                   className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm ${
+ 141 │ │                     view === 'list' 
+ 142 │ │                       ? 'bg-indigo-600 text-white hover:bg-indigo-700' 
+ 143 │ │                       : 'bg-gray-100 text-black hover:bg-gray-200 dark:text-black'
+ 144 │ │                   } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+ 145 │ │                   onClick={() => setView('list')}
+ 146 │ │                 >
+ 147 │ │                   List View
+ 148 │ │                 </button>
+ 149 │ │               </div>
+ 150 │ │             </div>
+ 151 │ │   
+ 152 │ │             {filteredBusinesses.length === 0 ? (
+ 153 │ │               <div className="text-center py-8">
+ 154 │ │                 <p className="text-gray-500 dark:text-gray-400">No businesses found matching your criteria.</p>
+ 155 │ │               </div>
+ 156 │ │             ) : view === 'map' ? (
+ 157 │ │               <div className="h-[600px] w-full rounded-lg overflow-hidden">
+ 158 │ │                 <Map businesses={filteredBusinesses} />
+ 159 │ │               </div>
+ 160 │ │             ) : (
+ 161 │ │               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+ 162 │ │                 {filteredBusinesses.map((business) => (
+ 163 │ │                   <BusinessCard key={business.id} business={business} />
+ 164 │ │                 ))}
+ 165 │ │               </div>
+ 166 │ │             )}
+ 167 │ │           </div>
+ 168 │ │         </div>
+ 169 │ │       </main>
+ 170 │ │     );
+ 171 │ ├─▶ }
+     · ╰──── previous exported here
+ 172 │     
+ 173 │     function BusinessCard({ business }: { business: Business }) {
+ 174 │       const businessCategories = categories.filter(cat => business.categories?.includes(cat.id));
+ 175 │     
+ 176 │       return (
+ 177 │         <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+ 178 │           <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-indigo-100 to-transparent opacity-50 -z-10 dark:from-indigo-700"></div>
+ 179 │     
+ 180 │           <div className="flex justify-between items-start mb-4">
+ 181 │             <h2 className="text-2xl font-bold text-gray-900 tracking-tight dark:text-white">{business.name}</h2>
+ 182 │             <div className="flex gap-2">
+ 183 │               {businessCategories.map((category) => (
+ 184 │                 <div key={category.id} 
+ 185 │                      className="flex items-center bg-indigo-50 px-3 py-1 rounded-full text-indigo-700 font-medium dark:bg-gray-700 dark:text-gray-200">
+ 186 │                   <span className="mr-1.5 text-lg">{category.icon}</span>
+ 187 │                   <span className="text-sm">{category.name}</span>
+ 188 │                 </div>
+ 189 │               ))}
+ 190 │             </div>
+ 191 │           </div>
+ 192 │     
+ 193 │           <div className="mb-6">
+ 194 │             <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 dark:text-gray-400">{business.description}</p>
+ 195 │           </div>
+ 196 │     
+ 197 │           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+ 198 │             <div className="space-y-3">
+ 199 │               <p className="flex items-center text-gray-600 hover:text-gray-800 transition-colors dark:text-gray-400 dark:hover:text-gray-200">
+ 200 │                 <svg className="h-5 w-5 mr-3 text-indigo-500 dark:text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+ 201 │                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+ 202 │                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+ 203 │                 </svg>
+ 204 │                 <span className="hover:underline">{business.address}</span>
+ 205 │               </p>
+ 206 │               <p className="flex items-center text-gray-600 hover:text-gray-800 transition-colors dark:text-gray-400 dark:hover:text-gray-200">
+ 207 │                 <svg className="h-5 w-5 mr-3 text-indigo-500 dark:text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+ 208 │                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+ 209 │                 </svg>
+ 210 │                 <span className="hover:underline">{business.phone}</span>
+ 211 │               </p>
+ 212 │             </div>
+ 213 │     
+ 214 │             <div className="flex items-center justify-end">
+ 215 │               {business.website && (
+ 216 │                 <a
+ 217 │                   href={business.website}
+ 218 │                   target="_blank"
+ 219 │                   rel="noopener noreferrer"
+ 220 │                   className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors group dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+ 221 │                 >
+ 222 │                   <svg className="h-5 w-5 mr-2 transition-transform group-hover:rotate-12 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+ 223 │                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+ 224 │                   </svg>
+ 225 │                   Visit Website
+ 226 │                 </a>
+ 227 │               )}
+ 228 │             </div>
+ 229 │           </div>
+ 230 │         </div>
+ 231 │       );
+ 232 │     }
+ 233 │ ╭─▶ export default Home;
+     · │──────────┬─────────
+     · │          ╰── exported more than once
+     ╰────
+
+Error: 
+  ☞ Exported identifiers must be unique
