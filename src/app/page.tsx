@@ -202,7 +202,7 @@ function BusinessCard({ business }: { business: Business }) {
 
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+          <div className="bg-white rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
             <button 
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
