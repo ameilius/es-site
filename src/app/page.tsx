@@ -168,6 +168,7 @@ export default function Home() {
 }
 
 function BusinessCard({ business }: { business: Business }) {
+  const [showModal, setShowModal] = useState(false);
   const businessCategories = categories.filter(cat => business.categories?.includes(cat.id));
   
   return (
@@ -187,7 +188,34 @@ function BusinessCard({ business }: { business: Business }) {
         </div>
       </div>
 
-      <p className="text-gray-600 mb-6 line-clamp-2 text-sm leading-relaxed">{business.description}</p>
+      <div className="mb-6">
+        <p className="text-gray-600 line-clamp-2 text-sm leading-relaxed">{business.description}</p>
+        {business.description.length > 150 && (
+          <button 
+            onClick={() => setShowModal(true)}
+            className="text-indigo-600 hover:text-indigo-800 text-sm mt-1 font-medium"
+          >
+            Read More
+          </button>
+        )}
+      </div>
+
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button 
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{business.name}</h2>
+            <p className="text-gray-600 text-base leading-relaxed">{business.description}</p>
+          </div>
+        </div>
+      )}
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
         <div className="space-y-3">
