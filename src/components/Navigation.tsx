@@ -50,8 +50,8 @@ export default function Navigation() {
               href="/"
               className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 ${
                 isActive('/') 
-                  ? 'text-indigo-600 border-b-2 border-indigo-600'
-                  : 'text-gray-500 hover:text-indigo-600'
+                  ? 'text-indigo-400 dark:text-indigo-300 border-b-2 border-indigo-400 dark:border-indigo-300'
+                  : 'text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-300'
               }`}
             >
               Home
@@ -60,8 +60,8 @@ export default function Navigation() {
               href="/add-business"
               className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 ${
                 isActive('/add-business')
-                  ? 'text-indigo-600 border-b-2 border-indigo-600'
-                  : 'text-gray-500 hover:text-indigo-600'
+                  ? 'text-indigo-400 dark:text-indigo-300 border-b-2 border-indigo-400 dark:border-indigo-300'
+                  : 'text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-300'
               }`}
             >
               Add Business
