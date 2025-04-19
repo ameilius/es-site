@@ -18,16 +18,9 @@ export default function InstagramPage() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // In production, this would fetch from Instagram's API
-        // For now, we'll use placeholder data
-        const mockPosts = Array.from({ length: 9 }, (_, i) => ({
-          id: `post-${i}`,
-          media_url: `https://source.unsplash.com/random/600x600?sylva,mountains&sig=${i}`,
-          caption: 'Exploring the beauty of Sylva, NC! #ExploreNC #VisitSylva',
-          permalink: 'https://instagram.com/exploresylva',
-          timestamp: new Date().toISOString()
-        }));
-        setPosts(mockPosts);
+        const response = await fetch('/api/instagram');
+        const data = await response.json();
+        setPosts(data);
       } catch (error) {
         console.error('Error fetching Instagram posts:', error);
       } finally {
